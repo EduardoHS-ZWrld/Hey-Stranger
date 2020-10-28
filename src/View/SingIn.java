@@ -8,6 +8,7 @@ import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
+import Conexões.MySQL;
 
 /**
  *
@@ -124,13 +125,15 @@ public class SingIn extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    MySQL conectar = new MySQL();
+    
     private void EntrarButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntrarButtActionPerformed
         try {
-            Class.forName(DRIVER);
-            Connection connection = DriverManager.getConnection(URL, "root", "");
+            conectar.conectaBanco();
             
             String sqlComand = "call pessoastranger.senhaComando(?);";
-            PreparedStatement comandoPassw = connection.prepareStatement(sqlComand);
+            
+            PreparedStatement comandoPassw = MySQL.getConn().prepareStatement(sqlComand);
             System.out.println("Conexão realizada com sucesso!");
             comandoPassw.setString(1, emailTxt.getText());
             

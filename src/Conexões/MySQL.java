@@ -10,10 +10,12 @@ public class MySQL {
     private Statement statement; //variável de manipulação do SQL
     private ResultSet resultSet;
     
+    final String DRIVER = "com.mysql.cj.jdbc.Driver";
     private String servidor = "127.0.0.1:3306";
-    private String nomeDoBanco = "banco_loja";
-    private String usuario = "marcio";
-    private String senha = "root";
+    private String nomeDoBanco = "HeyStranger";
+    final String URL = "jdbc:mysql://"+ servidor +"/"+ nomeDoBanco +"/mysql?useSSL=false&serverTimezone=UTC";
+    private String usuario = "root";
+    private String senha = "EdEdhs29182@MySQL";
 
     public MySQL() {
     }
@@ -46,5 +48,15 @@ public class MySQL {
         this.resultSet = resultSet;
     }
     
-    
+    public void conectaBanco(){
+        try {
+            Class.forName(DRIVER);
+            conn = DriverManager.getConnection(URL, usuario, senha);
+            if(conn != null){
+                System.out.println("Conexão efetuada com sucesso! " + "ID: " + conn);
+            }            
+        } catch (Exception e) {
+            System.out.println("Conexão não realizada - ERRO: " + e.getMessage());
+        }
+    }
 }
