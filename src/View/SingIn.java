@@ -128,18 +128,15 @@ public class SingIn extends javax.swing.JFrame {
         try {
             Class.forName(DRIVER);
             Connection connection = DriverManager.getConnection(URL, "root", "EdEdhs29182@MySQL");
-            String sqlComand = "select passw from Pessoa where email = ?;";
+            
+            String sqlComand = "call pessoastranger.senhaComando(?);";
             PreparedStatement comandoPassw = connection.prepareStatement(sqlComand);
+            System.out.println("Conexão realizada com sucesso!");
             comandoPassw.setString(1, emailTxt.getText());
+            
             System.out.println(comandoPassw);
             ResultSet resultPassw = comandoPassw.executeQuery();
             System.out.println(resultPassw);
-            while(resultPassw.next()){
-                //String sPassw = 
-            }
-            /*if (Password.getString(passw) == passwTxt.getText()){
-            }*/
-            System.out.println("Conexão realizada com sucesso!");
             connection.close();
         } catch (ClassNotFoundException erro) {
             JOptionPane.showMessageDialog(null, "Erro: Driver não encontrado!\n"
