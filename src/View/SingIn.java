@@ -127,7 +127,7 @@ public class SingIn extends javax.swing.JFrame {
     private void EntrarButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntrarButtActionPerformed
         try {
             Class.forName(DRIVER);
-            Connection connection = DriverManager.getConnection(URL, "root", "EdEdhs29182@MySQL");
+            Connection connection = DriverManager.getConnection(URL, "root", "");
             
             String sqlComand = "call pessoastranger.senhaComando(?);";
             PreparedStatement comandoPassw = connection.prepareStatement(sqlComand);
