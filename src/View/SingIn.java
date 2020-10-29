@@ -1,9 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package View;
+
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -130,23 +126,16 @@ public class SingIn extends javax.swing.JFrame {
     private void EntrarButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntrarButtActionPerformed
         try {
             conectar.conectaBanco();
-            
-            String sqlComand = "call pessoastranger.senhaComando(?);";
-            
-            PreparedStatement comandoPassw = MySQL.getConn().prepareStatement(sqlComand);
-            System.out.println("Conexão realizada com sucesso!");
-            comandoPassw.setString(1, emailTxt.getText());
-            
-            System.out.println(comandoPassw);
-            ResultSet resultPassw = comandoPassw.executeQuery();
-            System.out.println(resultPassw);
-            connection.close();
-        } catch (ClassNotFoundException erro) {
-            JOptionPane.showMessageDialog(null, "Erro: Driver não encontrado!\n"
-                    + erro.toString());
-        } catch (SQLException erro) {
-            JOptionPane.showMessageDialog(null, "Erro: Conexão com fonte de dados!\n"
-                    + erro.toString());
+            System.out.println("A");
+            String sqlComand = "call pessoastranger.senhaComando('"+emailTxt.getText()+"');";
+            conectar.getConn();
+            conectar.insertSQL(sqlComand);
+            System.out.println("B");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro: \n"
+                + e.toString());
+        } finally {
+            conectar.fechaBanco();
         }
     }//GEN-LAST:event_EntrarButtActionPerformed
 

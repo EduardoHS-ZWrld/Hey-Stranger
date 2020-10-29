@@ -12,8 +12,8 @@ public class MySQL {
     
     final String DRIVER = "com.mysql.cj.jdbc.Driver";
     private String servidor = "127.0.0.1:3306";
-    private String nomeDoBanco = "HeyStranger";
-    final String URL = "jdbc:mysql://"+ servidor +"/"+ nomeDoBanco +"/mysql?useSSL=false&serverTimezone=UTC";
+    private String nomeDoBanco = "PessoaStranger";
+    final String URL = "jdbc:mysql://"+ servidor +"/"+ nomeDoBanco;
     private String usuario = "root";
     private String senha = "EdEdhs29182@MySQL";
 
@@ -57,6 +57,30 @@ public class MySQL {
             }            
         } catch (Exception e) {
             System.out.println("Conexão não realizada - ERRO: " + e.getMessage());
+        }
+    }
+    
+        public int insertSQL(String SQL){
+        int status = 0;
+        try {
+            this.setStatement(getConn().createStatement());
+            
+            this.getStatement().executeUpdate(SQL);            
+        
+            return status;
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return status;
+        }
+    }
+    
+        public boolean fechaBanco(){
+        try {
+            conn.close();
+            return true;
+        } catch (Exception e) {
+            System.out.println("Erro ao fechar conexao " + e.getMessage());
+            return false;
         }
     }
 }
