@@ -18,9 +18,6 @@ public class SingIn extends javax.swing.JFrame {
     public SingIn() {
         initComponents();
     }
-
-    final String DRIVER = "com.mysql.cj.jdbc.Driver";
-    final String URL = "jdbc:mysql://127.0.0.1:3306/mysql?useSSL=false&serverTimezone=UTC";
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -125,16 +122,26 @@ public class SingIn extends javax.swing.JFrame {
     
     private void EntrarButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntrarButtActionPerformed
         try {
+            //leondozap@kasino.jhonson
             conectar.conectaBanco();
-            System.out.println("A");
-            String sqlComand = "call pessoastranger.senhaComando('"+emailTxt.getText()+"');";
+            
+            String sqlComand = "call heystranger.senhaComando('"+emailTxt.getText()+"');";
+            
             conectar.getConn();
             conectar.insertSQL(sqlComand);
-            System.out.println("B");
+            
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Erro: \n"
                 + e.toString());
         } finally {
+            if (conectar.getPassw().equalsIgnoreCase(passwTxt.getText())) {
+                //Tela de Loading rápida por que eu acho interessante
+                //Vai para o MenuPrincipal
+                JOptionPane.showMessageDialog(null, "Senha correta");
+            } else {
+                JOptionPane.showMessageDialog(null, "Senha incorreta");
+                passwTxt.setText("");
+            }
             conectar.fechaBanco();
         }
     }//GEN-LAST:event_EntrarButtActionPerformed
