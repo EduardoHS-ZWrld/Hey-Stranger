@@ -3,8 +3,10 @@ import java.util.Date;
 public class Pessoa {
     private int id;
     private String nome;
-    private Date idade;
+    private Date dataN;
     private String cpf;
+    private String estado;
+    private String city;
     private String end;
     private String email;
     private String passw;
@@ -26,11 +28,11 @@ public class Pessoa {
         this.nome = nome;
     }
 
-    public Date getIdade() {
-        return idade;
+    public Date getDataN() {
+        return dataN;
     }
-    private void setIdade(Date idade) {
-        this.idade = idade;
+    private void setDataN(Date dataN) {
+        this.dataN = dataN;
     }
 
     public String getCpf() {
@@ -38,6 +40,22 @@ public class Pessoa {
     }
     private void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public String getEnd() {

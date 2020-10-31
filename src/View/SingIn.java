@@ -29,27 +29,26 @@ public class SingIn extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         Email = new javax.swing.JLabel();
         Password = new javax.swing.JLabel();
         emailTxt = new javax.swing.JTextField();
         passwTxt = new javax.swing.JPasswordField();
         EntrarButt = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        cadastrarSe = new javax.swing.JButton();
+        Logo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setFocusTraversalPolicyProvider(true);
         setLocation(new java.awt.Point(200, 60));
+        setMaximumSize(new java.awt.Dimension(900, 600));
         setMinimumSize(new java.awt.Dimension(900, 600));
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(900, 600));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        jLabel1.setFont(new java.awt.Font("Arial Black", 0, 36)); // NOI18N
-        jLabel1.setText("Hello, Stranger!");
 
         Email.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         Email.setText("E-mail");
@@ -68,8 +67,13 @@ public class SingIn extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        jButton2.setText("Se cadastrar");
+        cadastrarSe.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        cadastrarSe.setText("Se cadastrar");
+        cadastrarSe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastrarSeActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -80,40 +84,41 @@ public class SingIn extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
                             .addComponent(Email)
                             .addComponent(Password))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 367, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(passwTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(emailTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(EntrarButt, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2))
-                        .addContainerGap(49, Short.MAX_VALUE))))
+                            .addComponent(cadastrarSe)
+                            .addComponent(passwTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel1)
-                .addGap(40, 40, 40)
+                .addGap(49, 49, 49)
                 .addComponent(Email)
-                .addGap(30, 30, 30)
-                .addComponent(emailTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(emailTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(63, 63, 63)
                 .addComponent(Password)
                 .addGap(18, 18, 18)
                 .addComponent(passwTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 150, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 142, Short.MAX_VALUE)
                 .addComponent(EntrarButt, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
-                .addGap(26, 26, 26))
+                .addGap(18, 18, 18)
+                .addComponent(cadastrarSe)
+                .addGap(40, 40, 40))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, 500, 580));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 490, 560));
+
+        Logo.setFont(new java.awt.Font("Arial Black", 0, 36)); // NOI18N
+        Logo.setText("Hello, Stranger!");
+        getContentPane().add(Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 210, 360, 130));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -145,6 +150,10 @@ public class SingIn extends javax.swing.JFrame {
             conectar.fechaBanco();
         }
     }//GEN-LAST:event_EntrarButtActionPerformed
+
+    private void cadastrarSeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarSeActionPerformed
+        
+    }//GEN-LAST:event_cadastrarSeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -184,10 +193,10 @@ public class SingIn extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Email;
     private javax.swing.JButton EntrarButt;
+    private javax.swing.JLabel Logo;
     private javax.swing.JLabel Password;
+    private javax.swing.JButton cadastrarSe;
     private javax.swing.JTextField emailTxt;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField passwTxt;
     // End of variables declaration//GEN-END:variables
