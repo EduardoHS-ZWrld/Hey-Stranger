@@ -133,7 +133,7 @@ public class SingIn extends javax.swing.JFrame {
             String sqlComand = "call heystranger.senhaComando('"+emailTxt.getText()+"');";
             
             conectar.getConn();
-            conectar.insertSQL(sqlComand);
+            conectar.entrarSQL(sqlComand);
             
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Erro: \n"

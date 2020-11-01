@@ -8,7 +8,7 @@ create table Pessoa (
     dataN		date,
     cpf			varchar(11),
     estado		char(2),
-    cidade		varchar(45),
+    city		varchar(45),
     ende		varchar(45),
     email		varchar(30),
     passw		varchar(30)
@@ -21,4 +21,5 @@ delimiter $
 create procedure senhaComando(EmailIn varchar(30))
 begin
     set @Senha = (select passw from Pessoa where email = EmailIn);
+    select @Senha;
 end$

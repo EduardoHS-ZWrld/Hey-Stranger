@@ -87,8 +87,23 @@ public class MySQL {
         }
     }
     
-    public void insertSQL(String SQL){
+    public void entrarSQL(String SQL){
         this.passw = null;
+        try {
+            this.setStatement(getConn().createStatement());
+            
+            resultSet = this.getStatement().executeQuery(SQL);
+            while (resultSet.next()) {
+                this.passw = resultSet.getString("@Senha");
+            }
+            System.out.println(this.passw);
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            System.out.println(this.passw);
+        }
+    }
+    
+    public void cadastrarSQL(String SQL){
         try {
             this.setStatement(getConn().createStatement());
             

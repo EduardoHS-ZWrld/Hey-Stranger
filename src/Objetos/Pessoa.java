@@ -1,13 +1,13 @@
 package Objetos;
-import java.util.Date;
+
 public class Pessoa {
     private int id;
     private String nome;
-    private Date dataN;
+    private String dataN;
     private String cpf;
     private String estado;
     private String city;
-    private String end;
+    private String ende;
     private String email;
     private String passw;
     
@@ -28,10 +28,10 @@ public class Pessoa {
         this.nome = nome;
     }
 
-    public Date getDataN() {
+    public String getDataN() {
         return dataN;
     }
-    private void setDataN(Date dataN) {
+    private void setDataN(String dataN) {
         this.dataN = dataN;
     }
 
@@ -46,7 +46,7 @@ public class Pessoa {
         return estado;
     }
 
-    public void setEstado(String estado) {
+    private void setEstado(String estado) {
         this.estado = estado;
     }
 
@@ -54,15 +54,15 @@ public class Pessoa {
         return city;
     }
 
-    public void setCity(String city) {
+    private void setCity(String city) {
         this.city = city;
     }
 
-    public String getEnd() {
-        return end;
+    public String getEnde() {
+        return ende;
     }
-    private void setEnd(String end) {
-        this.end = end;
+    private void setEnde(String ende) {
+        this.ende = ende;
     }
 
     public String getEmail() {
@@ -82,7 +82,18 @@ public class Pessoa {
     
     //Métodos
     //--------------------------------------------------------------------------
-    private void Comprar() {
+    
+    public void novoCliente(String nome, String dataN, String cpf, String estado, 
+                            String city, String end, String email, String passw) {
+        
+        this.setNome(nome);
+        this.setDataN(dataN);
+        this.setCpf(cpf);
+        this.setEstado(estado);
+        this.setCity(city);
+        this.setEnde(end);
+        this.setEmail(email);
+        this.setPassw(passw);
         
     }
     //--------------------------------------------------------------------------
