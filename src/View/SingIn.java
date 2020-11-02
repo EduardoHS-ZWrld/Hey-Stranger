@@ -35,6 +35,7 @@ public class SingIn extends javax.swing.JFrame {
         passwTxt = new javax.swing.JPasswordField();
         EntrarButt = new javax.swing.JButton();
         cadastrarSe = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
         Logo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -117,8 +118,25 @@ public class SingIn extends javax.swing.JFrame {
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 490, 560));
 
         Logo.setFont(new java.awt.Font("Arial Black", 0, 36)); // NOI18N
-        Logo.setText("Hello, Stranger!");
-        getContentPane().add(Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 210, 360, 130));
+        Logo.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\Documents\\Facens\\2º Semestre\\Linguagem de Programação - Prof. Márcio\\imagens HeyStranger\\HS-Logo2.png")); // NOI18N
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(Logo))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(200, 200, 200)
+                .addComponent(Logo, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(250, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -198,6 +216,7 @@ public class SingIn extends javax.swing.JFrame {
     private javax.swing.JButton cadastrarSe;
     private javax.swing.JTextField emailTxt;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPasswordField passwTxt;
     // End of variables declaration//GEN-END:variables
 }

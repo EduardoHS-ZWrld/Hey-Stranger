@@ -23,3 +23,15 @@ begin
     set @Senha = (select passw from Pessoa where email = EmailIn);
     select @Senha;
 end$
+
+create procedure insertCliente(nome varchar(30), 
+							   dataN date, 
+							   cpf varchar(11), 
+                               estado char(2), 
+                               city varchar(45), 
+                               ende varchar(45), 
+                               email varchar(30), 
+                               passw varchar(30))
+begin
+	insert into Pessoa values (null, nome, dataN, cpf, estado, city, ende, email, passw);
+end$
