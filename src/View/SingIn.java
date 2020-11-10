@@ -3,6 +3,7 @@ package View;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import View.NewClient;
 import javax.swing.*;
 import Conexões.MySQL;
 
@@ -131,9 +132,9 @@ public class SingIn extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(200, 200, 200)
-                .addComponent(Logo, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(250, Short.MAX_VALUE))
+                .addGap(210, 210, 210)
+                .addComponent(Logo, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(210, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 600));
@@ -153,7 +154,7 @@ public class SingIn extends javax.swing.JFrame {
             conectar.getConn();
             conectar.entrarSQL(sqlComand);
             
-        } catch (Exception e) {
+        } catch(NullPointerException e) {
             JOptionPane.showMessageDialog(null, "Erro: \n"
                 + e.toString());
         } finally {
