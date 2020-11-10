@@ -1,4 +1,6 @@
 # Hey-Stranger
+![alt text](https://github.com/EduardoHS-ZWrld/Hey-Stranger/blob/main/src/Imagens/HS-Logo1.png?raw=true)
+
 Loja virtual do ResidentEvil4
 
 Entrega da primeira versão do projeto: 02.11.2020
