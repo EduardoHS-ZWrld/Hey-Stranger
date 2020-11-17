@@ -1,9 +1,7 @@
 package View;
 
-import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import View.NewClient;
+//import java.util.logging.Level;
+//import java.util.logging.Logger;
 import javax.swing.*;
 import Conexões.MySQL;
 
@@ -40,6 +38,8 @@ public class SingIn extends javax.swing.JFrame {
         Logo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setAlwaysOnTop(true);
+        setBackground(new java.awt.Color(51, 51, 51));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setFocusTraversalPolicyProvider(true);
         setLocation(new java.awt.Point(200, 60));
@@ -48,6 +48,7 @@ public class SingIn extends javax.swing.JFrame {
         setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(900, 600));
         setResizable(false);
+        setSize(new java.awt.Dimension(900, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -58,9 +59,9 @@ public class SingIn extends javax.swing.JFrame {
         Password.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         Password.setText("Password");
 
-        emailTxt.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        emailTxt.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
 
-        passwTxt.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        passwTxt.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
 
         EntrarButt.setText("Entrar");
         EntrarButt.addActionListener(new java.awt.event.ActionListener() {
@@ -109,7 +110,7 @@ public class SingIn extends javax.swing.JFrame {
                 .addComponent(Password)
                 .addGap(18, 18, 18)
                 .addComponent(passwTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 142, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 148, Short.MAX_VALUE)
                 .addComponent(EntrarButt, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(cadastrarSe)
@@ -119,7 +120,6 @@ public class SingIn extends javax.swing.JFrame {
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 490, 560));
 
         Logo.setFont(new java.awt.Font("Arial Black", 0, 36)); // NOI18N
-        Logo.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\Documents\\Facens\\2º Semestre\\Linguagem de Programação - Prof. Márcio\\imagens HeyStranger\\HS-Logo2.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -143,10 +143,13 @@ public class SingIn extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     MySQL conectar = new MySQL();
+    //NewClient cadastrar = new NewClient();
+    //SingIn entrar = new SingIn();
     
     private void EntrarButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntrarButtActionPerformed
         try {
             //leondozap@kasino.jhonson
+            //CidadeGuaxinim
             conectar.conectaBanco();
             
             String sqlComand = "call heystranger.senhaComando('"+emailTxt.getText()+"');";
@@ -158,7 +161,7 @@ public class SingIn extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Erro: \n"
                 + e.toString());
         } finally {
-            if (conectar.getPassw().equalsIgnoreCase(passwTxt.getText())) {
+            if (conectar.getPassw().equals(passwTxt)) {
                 //Tela de Loading rápida por que eu acho interessante
                 //Vai para o MenuPrincipal
                 JOptionPane.showMessageDialog(null, "Senha correta");
@@ -169,8 +172,10 @@ public class SingIn extends javax.swing.JFrame {
             conectar.fechaBanco();
         }
     }//GEN-LAST:event_EntrarButtActionPerformed
-
+    
     private void cadastrarSeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarSeActionPerformed
+        new SingIn().setVisible(false);
+        new NewClient().setVisible(true);                                           
         
     }//GEN-LAST:event_cadastrarSeActionPerformed
 

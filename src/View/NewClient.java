@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package View;
 
 import Conexões.MySQL;
@@ -18,6 +13,7 @@ public class NewClient extends javax.swing.JFrame {
 
     MySQL conectar = new MySQL(); //acessar os métodos de conexao com o banco
     Pessoa nClient = new Pessoa(); //acessar os atributos da classe cliente
+    //SingIn entrar = new SingIn();
     
     String mês;
     
@@ -60,6 +56,7 @@ public class NewClient extends javax.swing.JFrame {
         Logo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(200, 60));
         setMaximumSize(new java.awt.Dimension(900, 600));
         setMinimumSize(new java.awt.Dimension(900, 600));
         setUndecorated(true);
@@ -72,7 +69,7 @@ public class NewClient extends javax.swing.JFrame {
         NomeCompleto.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         NomeCompleto.setText("Nome Completo:");
 
-        nomecTxt.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        nomecTxt.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
 
         cadastrarSe.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         cadastrarSe.setText("Se cadastrar");
@@ -90,6 +87,7 @@ public class NewClient extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        cpfTxt.setText("");
         cpfTxt.setMaximumSize(new java.awt.Dimension(2147483647, 30));
         cpfTxt.setMinimumSize(new java.awt.Dimension(64, 30));
 
@@ -116,17 +114,17 @@ public class NewClient extends javax.swing.JFrame {
         Cidade.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         Cidade.setText("Cidade:");
 
-        endeTxt.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        endeTxt.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
 
         Endereço.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         Endereço.setText("Endereço:");
 
-        cityTxt.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        cityTxt.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
 
         Email.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         Email.setText("E-mail:");
 
-        emailTxt.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        emailTxt.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
 
         Senha.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         Senha.setText("Senha:");
@@ -228,12 +226,12 @@ public class NewClient extends javax.swing.JFrame {
                     .addComponent(Email))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Senha)
-                .addGap(2, 2, 2)
-                .addComponent(passwTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(passwTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2)
                 .addComponent(SenhaConf)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cpasswTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cpasswTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addComponent(cadastrarSe, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35))
@@ -242,7 +240,6 @@ public class NewClient extends javax.swing.JFrame {
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 490, 560));
 
         Logo.setFont(new java.awt.Font("Arial Black", 0, 36)); // NOI18N
-        Logo.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\Documents\\Facens\\2º Semestre\\Linguagem de Programação - Prof. Márcio\\imagens HeyStranger\\HS-Logo2.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -280,34 +277,34 @@ public class NewClient extends javax.swing.JFrame {
             case 11:    mês = "12"; break;
             }
             
-            // Método para fazer as variaveis receberem seus valores
-            nClient.novoCliente(nomecTxt.getText(), 
-                yearTxt.getSelectedItem()+"-"+mês+"-"+dayTxt.getSelectedItem(), 
-                cpfTxt.getText(), 
-                estadoTxt.getToolTipText(), 
-                cityTxt.getText(), 
-                endeTxt.getText(), 
-                emailTxt.getText(), 
-                passwTxt.getText());
+        // Método para fazer as variaveis receberem seus valores
+        nClient.novoCliente(nomecTxt.getText(), 
+            yearTxt.getSelectedItem()+"-"+mês+"-"+dayTxt.getSelectedItem(), 
+            cpfTxt.getText(), 
+            estadoTxt.getToolTipText(), 
+            cityTxt.getText(), 
+            endeTxt.getText(), 
+            emailTxt.getText(), 
+            passwTxt.getText());
         
-            if (passwTxt.getText().equals(cpasswTxt.getText())) {
-                System.out.println("Senha confirmada");
-            } else {
-                throw new EmptyStackException();
-            }
+        if (passwTxt.getText().equals(cpasswTxt.getText())) {
+            System.out.println("Senha confirmada");
+        } else {
+            throw new EmptyStackException();
+        }
         
-            conectar.conectaBanco();
+        conectar.conectaBanco();
         
-            this.conectar.entrarSQL("call heystranger.insertCliente("
-                    + "'" + nClient.getNome() + "',"
-                    + "'" + nClient.getDataN() + "',"
-                    + "'" + nClient.getCpf() + "',"
-                    + "'" + nClient.getEstado() + "',"
-                    + "'" + nClient.getCity() + "',"
-                    + "'" + nClient.getEnde() + "',"
-                    + "'" + nClient.getEmail() + "',"
-                    + "'" + nClient.getPassw() + "',"
-                + ");");
+        this.conectar.cadastrarSQL("call heystranger.insertCliente("
+                + "'" + nClient.getNome() + "',"
+                + "'" + nClient.getDataN() + "',"
+                + "'" + nClient.getCpf() + "',"
+                + "'" + nClient.getEstado() + "',"
+                + "'" + nClient.getCity() + "',"
+                + "'" + nClient.getEnde() + "',"
+                + "'" + nClient.getEmail() + "',"
+                + "'" + nClient.getPassw() + "'"
+            + ");");
             
         } catch (NullPointerException e) {
             JOptionPane.showMessageDialog(null, "Algum campo não foi preenchido.");

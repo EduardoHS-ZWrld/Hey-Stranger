@@ -99,7 +99,7 @@ public class MySQL {
             System.out.println(this.passw);
         } catch (SQLException ex) {
             ex.printStackTrace();
-            System.out.println(this.passw);
+            System.out.println(this.getPassw());
         }
     }
     
@@ -107,14 +107,9 @@ public class MySQL {
         try {
             this.setStatement(getConn().createStatement());
             
-            resultSet = this.getStatement().executeQuery(SQL);
-            while (resultSet.next()) {
-                this.passw = resultSet.getString("@Senha");
-            }
-            System.out.println(this.passw);
+            JOptionPane.showMessageDialog(null, "Novo cliente cadastrado!");
         } catch (SQLException ex) {
             ex.printStackTrace();
-            System.out.println(this.passw);
         }
     }
     
