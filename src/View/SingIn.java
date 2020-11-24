@@ -150,7 +150,7 @@ public class SingIn extends javax.swing.JFrame {
         try {
             //leondozap@kasino.jhonson
             //CidadeGuaxinim
-            conectar.conectaBanco();
+            conectar.conectaBanco(1);
             
             String sqlComand = "call heystranger.senhaComando('"+emailTxt.getText()+"');";
             

@@ -13,8 +13,11 @@ public class MySQL {
     
     final String DRIVER = "com.mysql.cj.jdbc.Driver";
     private String servidor = "127.0.0.1:3306";
-    private String nomeDoBanco = "HeyStranger";
-    final String URL = "jdbc:mysql://"+ servidor +"/"+ nomeDoBanco;
+    private String dbPess = "HS_Pess";
+    private String dbProd = "HS_Prod";
+    private String URL = "";
+    final String URLps = "jdbc:mysql://"+ servidor +"/"+ dbPess;
+    final String URLpr = "jdbc:mysql://"+ servidor +"/"+ dbProd;
     private String usuario = "root";
     private String senha = "EdEdhs29182@MySQL";
     private String passw = null;
@@ -27,7 +30,7 @@ public class MySQL {
 
     public MySQL(String serv, String nBanco, String user, String senha) {
         this.servidor = serv;
-        this.nomeDoBanco = nBanco;
+        this.dbProd = nBanco;
         this.usuario = user;
         this.senha = senha;
     }
@@ -67,8 +70,14 @@ public class MySQL {
     
     //Métodos
     //--------------------------------------------------------------------------
-    public void conectaBanco(){
+    public void conectaBanco(int db){
         try {
+            switch (db) {
+                case 1:     URL = URLps; break;  
+                case 2:     URL = URLpr; break;  
+                default:    break;  
+            }
+            
             Class.forName(DRIVER);
             conn = DriverManager.getConnection(URL, usuario, senha);
             if(conn != null){
@@ -103,7 +112,7 @@ public class MySQL {
         }
     }
     
-    public void cadastrarSQL(String SQL){
+    public void cadastrarSQL(String SQL, int db){
         try {
             this.setStatement(getConn().createStatement());
             

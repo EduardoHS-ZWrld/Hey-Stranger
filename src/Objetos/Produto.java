@@ -6,6 +6,7 @@ public class Produto {
     private double pcusto;
     private int estoque;
     private String depart;
+    private String imagem;
     
     //Métodos Especiais
     //--------------------------------------------------------------------------
@@ -61,7 +62,7 @@ public class Produto {
     
     //Métodos
     //--------------------------------------------------------------------------
-    private void ViewProd(){
+    private void ViewProd(Produto prod){
         
     }
     //--------------------------------------------------------------------------

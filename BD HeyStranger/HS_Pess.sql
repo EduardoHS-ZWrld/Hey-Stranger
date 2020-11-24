@@ -1,6 +1,6 @@
-drop database if exists HeyStranger;
-create database HeyStranger;
-use HeyStranger;
+drop database if exists HS_Pess;
+create database HS_Pess;
+use HS_Pess;
 
 create table Pessoa (
 	idPessoa	int		auto_increment		primary key,
@@ -14,8 +14,8 @@ create table Pessoa (
     passw		varchar(30)
 );
 
-insert into Pessoa values (null, "Leon", "1985-07-15", "11122233300", "SP", "RacoonCity", "rua Nemesis da Silva, n. 528", "leondozap@kasino.jhonson", "CidadeGuaxinim");
-insert into Pessoa values ()
+insert into Pessoa values 
+	(null, "Leon Scott Kennedy", "1985-07-15", "11122233300", "SP", "RacoonCity", "rua Nemesis da Silva, n. 528", "leondozap@kasino.jhonson", "CidadeGuaxinim");
 
 delimiter $
 create procedure senhaComando(EmailIn varchar(30))
@@ -35,3 +35,5 @@ create procedure insertCliente(nome varchar(30),
 begin
 	insert into Pessoa values (null, nome, dataN, cpf, estado, city, ende, email, passw);
 end$
+
+delimiter ;
