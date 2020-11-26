@@ -42,7 +42,7 @@ public class SingIn extends javax.swing.JFrame {
         setBackground(new java.awt.Color(51, 51, 51));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setFocusTraversalPolicyProvider(true);
-        setLocation(new java.awt.Point(200, 60));
+        setLocation(new java.awt.Point(233, 84));
         setMaximumSize(new java.awt.Dimension(900, 600));
         setMinimumSize(new java.awt.Dimension(900, 600));
         setUndecorated(true);

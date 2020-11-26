@@ -12,7 +12,7 @@
     </Property>
     <Property name="focusTraversalPolicyProvider" type="boolean" value="true"/>
     <Property name="location" type="java.awt.Point" editor="org.netbeans.beaninfo.editors.PointEditor">
-      <Point value="[200, 60]"/>
+      <Point value="[233, 84]"/>
     </Property>
     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[900, 600]"/>

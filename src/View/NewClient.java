@@ -56,7 +56,7 @@ public class NewClient extends javax.swing.JFrame {
         Logo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setLocation(new java.awt.Point(200, 60));
+        setLocation(new java.awt.Point(233, 84));
         setMaximumSize(new java.awt.Dimension(900, 600));
         setMinimumSize(new java.awt.Dimension(900, 600));
         setUndecorated(true);

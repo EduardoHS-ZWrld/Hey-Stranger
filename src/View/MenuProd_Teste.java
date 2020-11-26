@@ -27,96 +27,171 @@ public class MenuProd_Teste extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jSlider1 = new javax.swing.JSlider();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        panelFiltro = new javax.swing.JPanel();
+        labFiltro = new javax.swing.JLabel();
+        cbDeparts = new javax.swing.JComboBox<>();
+        labelVMax = new javax.swing.JLabel();
+        spiVMax = new javax.swing.JSpinner();
+        labelVMin = new javax.swing.JLabel();
+        spiVMin = new javax.swing.JSpinner();
+        labelQuant = new javax.swing.JLabel();
+        sliQuant = new javax.swing.JSlider();
+        buttonFiltrar = new javax.swing.JButton();
+        panelProds = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        menuCliente = new javax.swing.JMenu();
+        menuFuncionario = new javax.swing.JMenu();
+        mitemCadastrar = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(233, 84));
         setMaximumSize(new java.awt.Dimension(900, 600));
         setMinimumSize(new java.awt.Dimension(900, 600));
+        setPreferredSize(new java.awt.Dimension(900, 600));
+        setResizable(false);
+        setSize(new java.awt.Dimension(900, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel1.setPreferredSize(new java.awt.Dimension(220, 576));
+        panelFiltro.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        panelFiltro.setPreferredSize(new java.awt.Dimension(250, 575));
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jButton1.setText("Filtrar");
-        jButton1.setPreferredSize(new java.awt.Dimension(100, 30));
+        labFiltro.setFont(new java.awt.Font("Mom´sTypewriter", 0, 28)); // NOI18N
+        labFiltro.setText("Filtro");
 
-        jSlider1.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
-        jSlider1.setMajorTickSpacing(100);
-        jSlider1.setMaximum(500);
-        jSlider1.setMinimum(50);
-        jSlider1.setMinorTickSpacing(50);
-        jSlider1.setPaintLabels(true);
-        jSlider1.setPaintTicks(true);
-        jSlider1.setSnapToTicks(true);
-        jSlider1.setValue(225);
-        jSlider1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jSlider1.setValueIsAdjusting(true);
+        cbDeparts.setFont(new java.awt.Font("Traveling _Typewriter", 0, 15)); // NOI18N
+        cbDeparts.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todos Departamentos", "Armas", "Munições", "Consumíveis", "Especiais" }));
+        cbDeparts.setPreferredSize(new java.awt.Dimension(204, 30));
 
-        jLabel1.setFont(new java.awt.Font("Mom´sTypewriter", 0, 28)); // NOI18N
-        jLabel1.setText("Filtro");
+        labelVMax.setFont(new java.awt.Font("Traveling _Typewriter", 1, 15)); // NOI18N
+        labelVMax.setText("Valor Máximo:");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(55, 55, 55)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(24, Short.MAX_VALUE))
+        spiVMax.setFont(new java.awt.Font("Traveling _Typewriter", 0, 16)); // NOI18N
+        spiVMax.setModel(new javax.swing.SpinnerNumberModel(7700.0d, 300.0d, 8000.0d, 100.0d));
+        spiVMax.setPreferredSize(new java.awt.Dimension(100, 30));
+
+        labelVMin.setFont(new java.awt.Font("Traveling _Typewriter", 1, 15)); // NOI18N
+        labelVMin.setText("Valor Mínimo:");
+
+        spiVMin.setFont(new java.awt.Font("Traveling _Typewriter", 0, 16)); // NOI18N
+        spiVMin.setModel(new javax.swing.SpinnerNumberModel(300.0d, 300.0d, 7700.0d, 100.0d));
+        spiVMin.setPreferredSize(new java.awt.Dimension(100, 30));
+
+        labelQuant.setFont(new java.awt.Font("Traveling _Typewriter", 1, 19)); // NOI18N
+        labelQuant.setText("Quantidade");
+        labelQuant.setPreferredSize(new java.awt.Dimension(112, 24));
+        labelQuant.setRequestFocusEnabled(false);
+
+        sliQuant.setMajorTickSpacing(20);
+        sliQuant.setMinorTickSpacing(5);
+        sliQuant.setPaintLabels(true);
+        sliQuant.setPaintTicks(true);
+        sliQuant.setSnapToTicks(true);
+        sliQuant.setPreferredSize(new java.awt.Dimension(190, 45));
+
+        buttonFiltrar.setFont(new java.awt.Font("Mom´sTypewriter", 0, 18)); // NOI18N
+        buttonFiltrar.setText("Filtrar");
+        buttonFiltrar.setPreferredSize(new java.awt.Dimension(100, 30));
+
+        javax.swing.GroupLayout panelFiltroLayout = new javax.swing.GroupLayout(panelFiltro);
+        panelFiltro.setLayout(panelFiltroLayout);
+        panelFiltroLayout.setHorizontalGroup(
+            panelFiltroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelFiltroLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(cbDeparts, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(panelFiltroLayout.createSequentialGroup()
+                .addGroup(panelFiltroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelFiltroLayout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addComponent(labFiltro))
+                    .addGroup(panelFiltroLayout.createSequentialGroup()
+                        .addGap(69, 69, 69)
+                        .addComponent(labelQuant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelFiltroLayout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addComponent(buttonFiltrar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(48, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelFiltroLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(panelFiltroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(sliQuant, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panelFiltroLayout.createSequentialGroup()
+                        .addGroup(panelFiltroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelVMin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelVMax, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(panelFiltroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(spiVMax, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(spiVMin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(15, 15, 15))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 347, Short.MAX_VALUE)
-                .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(75, 75, 75)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30))
+        panelFiltroLayout.setVerticalGroup(
+            panelFiltroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelFiltroLayout.createSequentialGroup()
+                .addContainerGap(42, Short.MAX_VALUE)
+                .addComponent(labFiltro)
+                .addGap(65, 65, 65)
+                .addComponent(cbDeparts, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addGroup(panelFiltroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(spiVMax, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelVMax, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addGroup(panelFiltroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelVMin, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(spiVMin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
+                .addComponent(labelQuant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(sliQuant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(55, 55, 55)
+                .addComponent(buttonFiltrar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(55, 55, 55))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(panelFiltro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 680, Short.MAX_VALUE)
+        panelProds.setPreferredSize(new java.awt.Dimension(650, 576));
+
+        javax.swing.GroupLayout panelProdsLayout = new javax.swing.GroupLayout(panelProds);
+        panelProds.setLayout(panelProdsLayout);
+        panelProdsLayout.setHorizontalGroup(
+            panelProdsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 650, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        panelProdsLayout.setVerticalGroup(
+            panelProdsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 576, Short.MAX_VALUE)
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 680, 576));
+        getContentPane().add(panelProds, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, -1, 576));
 
-        jMenu1.setText("Cliente");
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jMenu2.setText("Funcionário");
-        jMenuBar1.add(jMenu2);
+        menuCliente.setText("Cliente");
+        jMenuBar1.add(menuCliente);
+
+        menuFuncionario.setText("Funcionário");
+
+        mitemCadastrar.setText("Cadastrar");
+        mitemCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mitemCadastrarActionPerformed(evt);
+            }
+        });
+        menuFuncionario.add(mitemCadastrar);
+
+        jMenuBar1.add(menuFuncionario);
 
         setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void mitemCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitemCadastrarActionPerformed
+        new NewProduto().setVisible(true);
+    }//GEN-LAST:event_mitemCadastrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -154,13 +229,20 @@ public class MenuProd_Teste extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
+    private javax.swing.JButton buttonFiltrar;
+    private javax.swing.JComboBox<String> cbDeparts;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JSlider jSlider1;
+    private javax.swing.JLabel labFiltro;
+    private javax.swing.JLabel labelQuant;
+    private javax.swing.JLabel labelVMax;
+    private javax.swing.JLabel labelVMin;
+    private javax.swing.JMenu menuCliente;
+    private javax.swing.JMenu menuFuncionario;
+    private javax.swing.JMenuItem mitemCadastrar;
+    private javax.swing.JPanel panelFiltro;
+    private javax.swing.JPanel panelProds;
+    private javax.swing.JSlider sliQuant;
+    private javax.swing.JSpinner spiVMax;
+    private javax.swing.JSpinner spiVMin;
     // End of variables declaration//GEN-END:variables
 }
