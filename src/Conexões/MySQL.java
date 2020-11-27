@@ -115,8 +115,17 @@ public class MySQL {
     public void cadastrarSQL(String SQL, int db){
         try {
             this.setStatement(getConn().createStatement());
+            this.getStatement().executeUpdate(SQL); 
             
-            JOptionPane.showMessageDialog(null, "Novo cliente cadastrado!");
+            switch (db) {
+                case 1:
+                    JOptionPane.showMessageDialog(null, "Novo cliente cadastrado!");
+                    break;
+                case 2:
+                    JOptionPane.showMessageDialog(null, "Novo produto cadastrado!");
+                    break;
+            }
+            
         } catch (SQLException ex) {
             ex.printStackTrace();
         }

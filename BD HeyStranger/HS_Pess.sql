@@ -6,7 +6,7 @@ create table Pessoa (
 	idPessoa	int		auto_increment		primary key,
     nome		varchar(30),
     dataN		date,
-    cpf			varchar(11),
+    cpf			varchar(20),
     estado		char(2),
     city		varchar(45),
     ende		varchar(45),
@@ -15,7 +15,7 @@ create table Pessoa (
 );
 
 insert into Pessoa values 
-	(null, "Leon Scott Kennedy", "1985-07-15", "11122233300", "SP", "RacoonCity", "rua Nemesis da Silva, n. 528", "leondozap@kasino.jhonson", "CidadeGuaxinim");
+	(null, "Leon Scott Kennedy", "1985-07-15", "111.222.333-00", "SP", "RacoonCity", "rua Nemesis da Silva, n. 528", "leondozap@kasino.jhonson", "CidadeGuaxinim");
 
 delimiter $
 create procedure senhaComando(EmailIn varchar(30))

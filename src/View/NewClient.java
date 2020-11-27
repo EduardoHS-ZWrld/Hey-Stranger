@@ -294,7 +294,7 @@ public class NewClient extends javax.swing.JFrame {
         }
         
         conectar.conectaBanco(1);
-        String comando = "call heystranger.insertCliente("
+        String comando = "call hs_pess.insertCliente("
                 + "'" + nClient.getNome() + "',"
                 + "'" + nClient.getDataN() + "',"
                 + "'" + nClient.getCpf() + "',"
@@ -305,6 +305,7 @@ public class NewClient extends javax.swing.JFrame {
                 + "'" + nClient.getPassw() + "'"
             + ");";
         
+        System.out.println(nClient.getCpf());
         this.conectar.cadastrarSQL(comando, 1);
             
         } catch (NullPointerException e) {

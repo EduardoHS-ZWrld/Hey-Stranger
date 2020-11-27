@@ -66,14 +66,14 @@ public class MenuProd_Teste extends javax.swing.JFrame {
         labelVMax.setText("Valor Máximo:");
 
         spiVMax.setFont(new java.awt.Font("Traveling _Typewriter", 0, 16)); // NOI18N
-        spiVMax.setModel(new javax.swing.SpinnerNumberModel(7700.0d, 300.0d, 8000.0d, 100.0d));
+        spiVMax.setModel(new javax.swing.SpinnerNumberModel(7700, 300, 8000, 100));
         spiVMax.setPreferredSize(new java.awt.Dimension(100, 30));
 
         labelVMin.setFont(new java.awt.Font("Traveling _Typewriter", 1, 15)); // NOI18N
         labelVMin.setText("Valor Mínimo:");
 
         spiVMin.setFont(new java.awt.Font("Traveling _Typewriter", 0, 16)); // NOI18N
-        spiVMin.setModel(new javax.swing.SpinnerNumberModel(300.0d, 300.0d, 7700.0d, 100.0d));
+        spiVMin.setModel(new javax.swing.SpinnerNumberModel(300, 300, 7700, 100));
         spiVMin.setPreferredSize(new java.awt.Dimension(100, 30));
 
         labelQuant.setFont(new java.awt.Font("Traveling _Typewriter", 1, 19)); // NOI18N

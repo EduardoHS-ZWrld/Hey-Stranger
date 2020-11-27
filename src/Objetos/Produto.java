@@ -2,10 +2,10 @@ package Objetos;
 public class Produto {
     private int pnum;
     private String nome;
-    private double pvenda;
-    private double pcusto;
+    private int pvenda;
+    private int pcusto;
     private int estoque;
-    private String depart;
+    private int depart;
     private String imagem;
     
     //Métodos Especiais
@@ -31,7 +31,7 @@ public class Produto {
     public double getPvenda() {
         return pvenda;
     }
-    public void setPvenda(double pVenda) {
+    public void setPvenda(int pVenda) {
         this.pvenda = pVenda;
     }//</editor-fold>
 
@@ -39,7 +39,7 @@ public class Produto {
     public double getPcusto() {
         return pcusto;
     }
-    public void setPcusto(double pCusto) {
+    public void setPcusto(int pCusto) {
         this.pcusto = pCusto;
     }   //</editor-fold>
     
@@ -52,16 +52,37 @@ public class Produto {
     }   //</editor-fold>
 
     //<editor-fold defaultstate="collapsed" desc="G-S Departamento">
-    public String getDepart() {
+    public int getDepart() {
         return depart;
     }
-    private void setDepart(String depart) {
+    private void setDepart(int depart) {
         this.depart = depart;
     }   //</editor-fold>
+
+    //<editor-fold defaultstate="collapsed" desc="G-S Imagem">
+    public String getImagem() {
+        return imagem;
+    }
+    public void setImagem(String imagem) {
+        this.imagem = imagem;
+    }   //</editor-fold>
+    
+    
     //--------------------------------------------------------------------------
     
     //Métodos
     //--------------------------------------------------------------------------
+    public void NewProduto(String nome,     int pvenda,     int pcusto,
+                           int estoque,     int depart,  String imagem) {
+        
+        this.setNome(nome);
+        this.setPvenda(pvenda);
+        this.setPcusto(pcusto);
+        this.setEstoque(estoque);
+        this.setDepart(depart);
+        this.setImagem(imagem);
+    }
+    
     private void ViewProd(Produto prod){
         
     }
