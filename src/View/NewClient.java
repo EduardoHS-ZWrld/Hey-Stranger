@@ -34,12 +34,9 @@ public class NewClient extends javax.swing.JFrame {
         NomeCompleto = new javax.swing.JLabel();
         nomecTxt = new javax.swing.JTextField();
         cadastrarSe = new javax.swing.JButton();
-        CPF = new javax.swing.JLabel();
-        cpfTxt = new javax.swing.JFormattedTextField();
         DataNascença = new javax.swing.JLabel();
         monthTxt = new javax.swing.JComboBox<>();
         dayTxt = new javax.swing.JComboBox<>();
-        yearTxt = new javax.swing.JComboBox<>();
         Estado = new javax.swing.JLabel();
         estadoTxt = new javax.swing.JComboBox<>();
         Cidade = new javax.swing.JLabel();
@@ -52,6 +49,9 @@ public class NewClient extends javax.swing.JFrame {
         SenhaConf = new javax.swing.JLabel();
         passwTxt = new javax.swing.JPasswordField();
         cpasswTxt = new javax.swing.JPasswordField();
+        yearTxt = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
+        cpfTxt = new javax.swing.JFormattedTextField();
         jPanel1 = new javax.swing.JPanel();
         Logo = new javax.swing.JLabel();
 
@@ -66,10 +66,10 @@ public class NewClient extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        NomeCompleto.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        NomeCompleto.setFont(new java.awt.Font("Traveling _Typewriter", 0, 15)); // NOI18N
         NomeCompleto.setText("Nome Completo:");
 
-        nomecTxt.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        nomecTxt.setFont(new java.awt.Font("Traveling _Typewriter", 0, 18)); // NOI18N
 
         cadastrarSe.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         cadastrarSe.setText("Se cadastrar");
@@ -79,67 +79,76 @@ public class NewClient extends javax.swing.JFrame {
             }
         });
 
-        CPF.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        CPF.setText("CPF:");
-
-        try {
-            cpfTxt.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        cpfTxt.setText("");
-        cpfTxt.setMaximumSize(new java.awt.Dimension(2147483647, 30));
-        cpfTxt.setMinimumSize(new java.awt.Dimension(64, 30));
-
-        DataNascença.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        DataNascença.setFont(new java.awt.Font("Traveling _Typewriter", 0, 15)); // NOI18N
         DataNascença.setText("Data de Nascença:");
 
+        monthTxt.setFont(new java.awt.Font("Traveling _Typewriter", 0, 13)); // NOI18N
         monthTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro" }));
         monthTxt.setToolTipText("Mês");
         monthTxt.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         monthTxt.setName("Mês"); // NOI18N
         monthTxt.setPreferredSize(new java.awt.Dimension(69, 30));
 
+        dayTxt.setFont(new java.awt.Font("Traveling _Typewriter", 0, 12)); // NOI18N
         dayTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
-        dayTxt.setPreferredSize(new java.awt.Dimension(69, 30));
+        dayTxt.setMinimumSize(new java.awt.Dimension(55, 30));
+        dayTxt.setPreferredSize(new java.awt.Dimension(57, 30));
 
-        yearTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990", "1989", "1988", "1987", "1986", "1985", "1984", "1983", "1982", "1981", "1980", "1979", "1978", "1977", "1976", "1975", "1974", "1973", "1972", "1971", "1970", "1969", "1968", "1967", "1966", "1965", "1964", "1963", "1962", "1961", "1960", "1959", "1958", "1957", "1956", "1955", "1954", "1953", "1952", "1951", "1950", "1949", "1948", "1947", "1946", "1945", "1944", "1943", "1942", "1941", "1940", "1939", "1938", "1937", "1936", "1935", "1934", "1933", "1932", "1931", "1930" }));
-
-        Estado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Estado.setFont(new java.awt.Font("Traveling _Typewriter", 0, 15)); // NOI18N
         Estado.setText("Estado:");
 
+        estadoTxt.setFont(new java.awt.Font("Traveling _Typewriter", 0, 14)); // NOI18N
         estadoTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
         estadoTxt.setPreferredSize(new java.awt.Dimension(69, 30));
 
-        Cidade.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Cidade.setFont(new java.awt.Font("Traveling _Typewriter", 0, 15)); // NOI18N
         Cidade.setText("Cidade:");
 
-        endeTxt.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        endeTxt.setFont(new java.awt.Font("Traveling _Typewriter", 0, 18)); // NOI18N
 
-        Endereço.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Endereço.setFont(new java.awt.Font("Traveling _Typewriter", 0, 15)); // NOI18N
         Endereço.setText("Endereço:");
 
-        cityTxt.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        cityTxt.setFont(new java.awt.Font("Traveling _Typewriter", 0, 18)); // NOI18N
 
-        Email.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        Email.setFont(new java.awt.Font("Traveling _Typewriter", 0, 15)); // NOI18N
         Email.setText("E-mail:");
 
-        emailTxt.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        emailTxt.setFont(new java.awt.Font("Traveling _Typewriter", 0, 18)); // NOI18N
 
-        Senha.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        Senha.setFont(new java.awt.Font("Traveling _Typewriter", 0, 15)); // NOI18N
         Senha.setText("Senha:");
 
-        SenhaConf.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        SenhaConf.setFont(new java.awt.Font("Traveling _Typewriter", 0, 15)); // NOI18N
         SenhaConf.setText("Confirmação de Senha:");
 
+        passwTxt.setFont(new java.awt.Font("Traveling _Typewriter", 0, 18)); // NOI18N
+
+        cpasswTxt.setFont(new java.awt.Font("Traveling _Typewriter", 0, 18)); // NOI18N
         cpasswTxt.setToolTipText("");
+
+        yearTxt.setFont(new java.awt.Font("Traveling _Typewriter", 0, 14)); // NOI18N
+        yearTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990", "1989", "1988", "1987", "1986", "1985", "1984", "1983", "1982", "1981", "1980", "1979", "1978", "1977", "1976", "1975", "1974", "1973", "1972", "1971", "1970", "1969", "1968", "1967", "1966", "1965", "1964", "1963", "1962", "1961", "1960", "1959", "1958", "1957", "1956", "1955", "1954", "1953", "1952", "1951", "1950", "1949", "1948", "1947", "1946", "1945", "1944", "1943", "1942", "1941", "1940", "1939", "1938", "1937", "1936", "1935", "1934", "1933", "1932", "1931", "1930" }));
+        yearTxt.setMinimumSize(new java.awt.Dimension(60, 30));
+        yearTxt.setPreferredSize(new java.awt.Dimension(60, 30));
+
+        jLabel1.setFont(new java.awt.Font("Traveling _Typewriter", 0, 15)); // NOI18N
+        jLabel1.setText("CPF:");
+
+        try {
+            cpfTxt.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        cpfTxt.setFont(new java.awt.Font("Traveling _Typewriter", 0, 13)); // NOI18N
+        cpfTxt.setPreferredSize(new java.awt.Dimension(64, 30));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(28, 28, 28)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(Endereço)
@@ -162,36 +171,32 @@ public class NewClient extends javax.swing.JFrame {
                                 .addComponent(NomeCompleto)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(nomecTxt))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(CPF)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(cpfTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(Estado)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(estadoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(12, 12, 12)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(Cidade)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(cityTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(DataNascença)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(monthTxt, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addComponent(dayTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(yearTxt, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
                             .addComponent(endeTxt, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(cadastrarSe, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(30, 30, 30))))
+                                .addComponent(cadastrarSe, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(Estado)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(estadoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                                .addComponent(Cidade)
+                                .addGap(18, 18, 18)
+                                .addComponent(cityTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cpfTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(DataNascença)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(dayTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(yearTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(monthTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(28, 28, 28))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -202,15 +207,15 @@ public class NewClient extends javax.swing.JFrame {
                     .addComponent(nomecTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CPF)
-                    .addComponent(cpfTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(monthTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(DataNascença)
-                    .addComponent(monthTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1)
+                    .addComponent(cpfTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(yearTxt)
-                    .addComponent(dayTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(dayTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(yearTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Estado)
                     .addComponent(estadoTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -354,7 +359,6 @@ public class NewClient extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel CPF;
     private javax.swing.JLabel Cidade;
     private javax.swing.JLabel DataNascença;
     private javax.swing.JLabel Email;
@@ -372,6 +376,7 @@ public class NewClient extends javax.swing.JFrame {
     private javax.swing.JTextField emailTxt;
     private javax.swing.JTextField endeTxt;
     private javax.swing.JComboBox<String> estadoTxt;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JComboBox<String> monthTxt;

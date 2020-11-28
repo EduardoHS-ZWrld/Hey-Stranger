@@ -50,13 +50,14 @@ public class NewProduto extends javax.swing.JFrame {
         butCancelar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabProds = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         labBG = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(433, 59));
         setMaximumSize(new java.awt.Dimension(500, 650));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(500, 650));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -77,14 +78,14 @@ public class NewProduto extends javax.swing.JFrame {
         labPVenda.setText("Preço de Venda:");
 
         spiPVenda.setFont(new java.awt.Font("Traveling _Typewriter", 0, 17)); // NOI18N
-        spiPVenda.setModel(new javax.swing.SpinnerNumberModel(300, 300, 7700, 100));
+        spiPVenda.setModel(new javax.swing.SpinnerNumberModel(4000, 100, 8000, 100));
         spiPVenda.setPreferredSize(new java.awt.Dimension(100, 30));
 
         labPCusto.setFont(new java.awt.Font("Traveling _Typewriter", 1, 17)); // NOI18N
         labPCusto.setText("Preço de Custo:");
 
         spiPCusto.setFont(new java.awt.Font("Traveling _Typewriter", 0, 17)); // NOI18N
-        spiPCusto.setModel(new javax.swing.SpinnerNumberModel(7700, 300, 8000, 100));
+        spiPCusto.setModel(new javax.swing.SpinnerNumberModel(4000, 100, 8000, 100));
         spiPCusto.setPreferredSize(new java.awt.Dimension(100, 30));
 
         labEstoq.setFont(new java.awt.Font("Traveling _Typewriter", 1, 17)); // NOI18N
@@ -124,6 +125,11 @@ public class NewProduto extends javax.swing.JFrame {
         butCancelar.setFont(new java.awt.Font("Traveling _Typewriter", 0, 18)); // NOI18N
         butCancelar.setText("Cancelar");
         butCancelar.setPreferredSize(new java.awt.Dimension(150, 45));
+        butCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butCancelarActionPerformed(evt);
+            }
+        });
 
         jScrollPane1.setPreferredSize(new java.awt.Dimension(488, 180));
 
@@ -164,44 +170,58 @@ public class NewProduto extends javax.swing.JFrame {
         tabProds.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tabProds);
 
+        jLabel1.setFont(new java.awt.Font("Traveling _Typewriter", 0, 18)); // NOI18N
+        jLabel1.setText("ptas");
+
+        jLabel2.setFont(new java.awt.Font("Traveling _Typewriter", 0, 18)); // NOI18N
+        jLabel2.setText("ptas");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(nmprodLab)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(labPVenda)
-                        .addComponent(labPCusto))
-                    .addComponent(imageLab)
-                    .addComponent(labEstoq)
-                    .addComponent(labDepart))
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(spiPVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nmprodTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
-                    .addComponent(spiPCusto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbDepart, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(spiEstoq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(imageTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nmprodLab)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(labPVenda)
+                                .addComponent(labPCusto))
+                            .addComponent(imageLab)
+                            .addComponent(labEstoq)
+                            .addComponent(labDepart))
+                        .addGap(18, 18, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(nmprodTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(spiPCusto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel2))
+                            .addComponent(spiEstoq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(imageTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(spiPVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel1))
+                            .addComponent(cbDepart, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(75, 75, 75)
+                                .addComponent(butAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(50, 50, 50)
+                                .addComponent(butCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(nwprodLab)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(75, 75, 75)
-                        .addComponent(butAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(50, 50, 50)
-                        .addComponent(butCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(nwprodLab)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -215,10 +235,13 @@ public class NewProduto extends javax.swing.JFrame {
                 .addGap(17, 17, 17)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labPVenda)
-                    .addComponent(spiPVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(spiPVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(spiPCusto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(spiPCusto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel2))
                     .addComponent(labPCusto))
                 .addGap(17, 17, 17)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -263,34 +286,15 @@ public class NewProduto extends javax.swing.JFrame {
         } catch ( java.text.ParseException e ) {
             System.out.println("ERRO");
         }
-        System.out.println("Pega Spinners");
         
-        System.out.println("Começa Processo Botão");
+        
         try {
-            
-//            switch (cbDepart.getSelectedIndex()) {
-//                case 1:
-//                    depart = 1;
-//                    break;
-//                case "Munições":
-//                    depart = 2;
-//                    break;
-//                case "Consumíveis":
-//                    depart = 3;
-//                    break;
-//                case "Especiais":
-//                    depart = 4;
-//                    break;
-//            }
-//            System.out.println("DepartInt");
-            
             nProd.NewProduto(nmprodTxt.getText(), 
             (int) spiPVenda.getValue(),
             (int) spiPCusto.getValue(),
             (int) spiEstoq.getValue(),
             cbDepart.getSelectedIndex() + 1,
             imageTxt.getText());
-            System.out.println("Fazendo Produto-obj");
             
             conectar.conectaBanco(2);
             String comando = "call hs_prod.insertProduto("
@@ -300,11 +304,17 @@ public class NewProduto extends javax.swing.JFrame {
                 + "" + nProd.getEstoque() + ","
                 + "" + nProd.getDepart() + ""
             + ");";
-            
-            System.out.println("Cria Comando");
         
             conectar.cadastrarSQL(comando, 2);
-            System.out.println("Manda Comando");
+            
+            //<editor-fold defaultstate="collapsed" desc="Limpa campos">
+            nmprodTxt.setText("");
+            spiPVenda.setValue(4000);
+            spiPCusto.setValue(4000);
+            spiEstoq.setValue(1);
+            cbDepart.setSelectedIndex(0);
+            imageTxt.setText("");
+            //</editor-fold>
             
         } catch (NullPointerException e) {
             JOptionPane.showMessageDialog(null, "Algum campo não foi preenchido.");
@@ -315,8 +325,21 @@ public class NewProduto extends javax.swing.JFrame {
     }//GEN-LAST:event_butAdicionarActionPerformed
 
     private void cbDepartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbDepartActionPerformed
-        // TODO add your handling code here:
+         //TODO add your handling code here:
     }//GEN-LAST:event_cbDepartActionPerformed
+
+    private void butCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butCancelarActionPerformed
+        //<editor-fold defaultstate="collapsed" desc="Limpa campos">
+            nmprodTxt.setText("");
+            spiPVenda.setValue(4000);
+            spiPCusto.setValue(4000);
+            spiEstoq.setValue(1);
+            cbDepart.setSelectedIndex(0);
+            imageTxt.setText("");
+        //</editor-fold>
+        
+        
+    }//GEN-LAST:event_butCancelarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -359,6 +382,8 @@ public class NewProduto extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbDepart;
     private javax.swing.JLabel imageLab;
     private javax.swing.JTextField imageTxt;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labBG;

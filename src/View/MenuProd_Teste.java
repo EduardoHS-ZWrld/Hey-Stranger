@@ -37,9 +37,12 @@ public class MenuProd_Teste extends javax.swing.JFrame {
         labelQuant = new javax.swing.JLabel();
         sliQuant = new javax.swing.JSlider();
         buttonFiltrar = new javax.swing.JButton();
-        panelProds = new javax.swing.JPanel();
+        scroll = new javax.swing.JScrollPane();
+        imagemTeste = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuCliente = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         menuFuncionario = new javax.swing.JMenu();
         mitemCadastrar = new javax.swing.JMenuItem();
 
@@ -66,7 +69,7 @@ public class MenuProd_Teste extends javax.swing.JFrame {
         labelVMax.setText("Valor Máximo:");
 
         spiVMax.setFont(new java.awt.Font("Traveling _Typewriter", 0, 16)); // NOI18N
-        spiVMax.setModel(new javax.swing.SpinnerNumberModel(7700, 300, 8000, 100));
+        spiVMax.setModel(new javax.swing.SpinnerNumberModel(8000, 300, 8000, 100));
         spiVMax.setPreferredSize(new java.awt.Dimension(100, 30));
 
         labelVMin.setFont(new java.awt.Font("Traveling _Typewriter", 1, 15)); // NOI18N
@@ -152,24 +155,26 @@ public class MenuProd_Teste extends javax.swing.JFrame {
 
         getContentPane().add(panelFiltro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        panelProds.setPreferredSize(new java.awt.Dimension(650, 576));
+        imagemTeste.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\Pictures\\PokéBattle\\PokeBattle Interface1.jpg")); // NOI18N
+        scroll.setViewportView(imagemTeste);
 
-        javax.swing.GroupLayout panelProdsLayout = new javax.swing.GroupLayout(panelProds);
-        panelProds.setLayout(panelProdsLayout);
-        panelProdsLayout.setHorizontalGroup(
-            panelProdsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 650, Short.MAX_VALUE)
-        );
-        panelProdsLayout.setVerticalGroup(
-            panelProdsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 576, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(panelProds, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, -1, 576));
+        getContentPane().add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, -1, -1));
 
         jMenuBar1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         menuCliente.setText("Cliente");
+
+        jMenuItem1.setText("Carrinho");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        menuCliente.add(jMenuItem1);
+
+        jMenuItem2.setText("Lista de Desejos");
+        menuCliente.add(jMenuItem2);
+
         jMenuBar1.add(menuCliente);
 
         menuFuncionario.setText("Funcionário");
@@ -192,6 +197,10 @@ public class MenuProd_Teste extends javax.swing.JFrame {
     private void mitemCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitemCadastrarActionPerformed
         new NewProduto().setVisible(true);
     }//GEN-LAST:event_mitemCadastrarActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -231,7 +240,10 @@ public class MenuProd_Teste extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonFiltrar;
     private javax.swing.JComboBox<String> cbDeparts;
+    private javax.swing.JLabel imagemTeste;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JLabel labFiltro;
     private javax.swing.JLabel labelQuant;
     private javax.swing.JLabel labelVMax;
@@ -240,7 +252,7 @@ public class MenuProd_Teste extends javax.swing.JFrame {
     private javax.swing.JMenu menuFuncionario;
     private javax.swing.JMenuItem mitemCadastrar;
     private javax.swing.JPanel panelFiltro;
-    private javax.swing.JPanel panelProds;
+    private javax.swing.JScrollPane scroll;
     private javax.swing.JSlider sliQuant;
     private javax.swing.JSpinner spiVMax;
     private javax.swing.JSpinner spiVMin;
