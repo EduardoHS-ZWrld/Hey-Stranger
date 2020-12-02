@@ -26,7 +26,7 @@ end$
 
 create procedure insertCliente(nome varchar(30), 
 							   dataN date, 
-							   cpf varchar(11), 
+							   cpf varchar(20), 
                                estado char(2), 
                                city varchar(45), 
                                ende varchar(45), 

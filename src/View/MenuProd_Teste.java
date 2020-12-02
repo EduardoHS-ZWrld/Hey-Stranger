@@ -27,6 +27,8 @@ public class MenuProd_Teste extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        imagemTeste = new javax.swing.JLabel();
         panelFiltro = new javax.swing.JPanel();
         labFiltro = new javax.swing.JLabel();
         cbDeparts = new javax.swing.JComboBox<>();
@@ -38,13 +40,17 @@ public class MenuProd_Teste extends javax.swing.JFrame {
         sliQuant = new javax.swing.JSlider();
         buttonFiltrar = new javax.swing.JButton();
         scroll = new javax.swing.JScrollPane();
-        imagemTeste = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuCliente = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         menuFuncionario = new javax.swing.JMenu();
         mitemCadastrar = new javax.swing.JMenuItem();
+
+        jLabel1.setText("jLabel1");
+
+        imagemTeste.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\Pictures\\PokéBattle\\PokeBattle Interface1.jpg")); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(233, 84));
@@ -155,10 +161,12 @@ public class MenuProd_Teste extends javax.swing.JFrame {
 
         getContentPane().add(panelFiltro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        imagemTeste.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\Pictures\\PokéBattle\\PokeBattle Interface1.jpg")); // NOI18N
-        scroll.setViewportView(imagemTeste);
+        jLabel2.setText("jLabel2");
+        jLabel2.setPreferredSize(new java.awt.Dimension(100, 100));
+        scroll.setViewportView(jLabel2);
+        jLabel2.getAccessibleContext().setAccessibleDescription("");
 
-        getContentPane().add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, -1, -1));
+        getContentPane().add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, 650, 575));
 
         jMenuBar1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -241,6 +249,8 @@ public class MenuProd_Teste extends javax.swing.JFrame {
     private javax.swing.JButton buttonFiltrar;
     private javax.swing.JComboBox<String> cbDeparts;
     private javax.swing.JLabel imagemTeste;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;

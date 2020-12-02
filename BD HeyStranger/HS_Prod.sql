@@ -15,6 +15,7 @@ create table Produto (
 	pcusto		int,
 	estoque		int,
 	depart		int,
+    descr		varchar(500),
 	image		varchar(40),
 
 	foreign key (depart) references Departamento(idDepart)
@@ -23,6 +24,7 @@ create table Produto (
 insert into Departamento values (null, 'Armas');
 insert into Departamento values (null, 'Munições');
 insert into Departamento values (null, 'Consumíveis');
+insert into Departamento values (null, 'Mapas');
 insert into Departamento values (null, 'Especiais');
 
 delimiter $
@@ -30,7 +32,8 @@ create procedure insertProduto(nome varchar(40),
 							   pvenda		int,
 							   pcusto		int,
 							   estoque		int,
-							   depart		int)
+							   depart		int,
+                               descr		varchar(500))
 begin
-	insert into Produto values (null, nome, pvenda, pcusto, estoque, depart, null);
+	insert into Produto values (null, nome, pvenda, pcusto, estoque, depart, descr, null);
 end$

@@ -2,6 +2,7 @@ package View;
 
 import Conexões.MySQL;
 import Objetos.Produto;
+import java.awt.event.WindowEvent;
 import java.util.EmptyStackException;
 import javax.swing.JOptionPane;
 
@@ -38,26 +39,25 @@ public class NewProduto extends javax.swing.JFrame {
         nmprodTxt = new javax.swing.JTextField();
         labPVenda = new javax.swing.JLabel();
         spiPVenda = new javax.swing.JSpinner();
+        jLabel1 = new javax.swing.JLabel();
         labPCusto = new javax.swing.JLabel();
         spiPCusto = new javax.swing.JSpinner();
+        jLabel2 = new javax.swing.JLabel();
         labEstoq = new javax.swing.JLabel();
         spiEstoq = new javax.swing.JSpinner();
         labDepart = new javax.swing.JLabel();
         cbDepart = new javax.swing.JComboBox<>();
         imageLab = new javax.swing.JLabel();
         imageTxt = new javax.swing.JTextField();
+        labDescr = new javax.swing.JLabel();
+        descrTxtar = new javax.swing.JTextArea();
         butAdicionar = new javax.swing.JButton();
         butCancelar = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tabProds = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         labBG = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(433, 59));
         setMaximumSize(new java.awt.Dimension(500, 650));
-        setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -81,12 +81,18 @@ public class NewProduto extends javax.swing.JFrame {
         spiPVenda.setModel(new javax.swing.SpinnerNumberModel(4000, 100, 8000, 100));
         spiPVenda.setPreferredSize(new java.awt.Dimension(100, 30));
 
+        jLabel1.setFont(new java.awt.Font("Traveling _Typewriter", 0, 18)); // NOI18N
+        jLabel1.setText("ptas");
+
         labPCusto.setFont(new java.awt.Font("Traveling _Typewriter", 1, 17)); // NOI18N
         labPCusto.setText("Preço de Custo:");
 
         spiPCusto.setFont(new java.awt.Font("Traveling _Typewriter", 0, 17)); // NOI18N
         spiPCusto.setModel(new javax.swing.SpinnerNumberModel(4000, 100, 8000, 100));
         spiPCusto.setPreferredSize(new java.awt.Dimension(100, 30));
+
+        jLabel2.setFont(new java.awt.Font("Traveling _Typewriter", 0, 18)); // NOI18N
+        jLabel2.setText("ptas");
 
         labEstoq.setFont(new java.awt.Font("Traveling _Typewriter", 1, 17)); // NOI18N
         labEstoq.setText("Estoque:");
@@ -99,7 +105,7 @@ public class NewProduto extends javax.swing.JFrame {
         labDepart.setText("Departamento:");
 
         cbDepart.setFont(new java.awt.Font("Traveling _Typewriter", 0, 17)); // NOI18N
-        cbDepart.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Armas", "Munições", "Consumíveis", "Especiais" }));
+        cbDepart.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Armas", "Munições", "Consumíveis", "Mapa", "Especiais" }));
         cbDepart.setPreferredSize(new java.awt.Dimension(69, 30));
         cbDepart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,6 +118,15 @@ public class NewProduto extends javax.swing.JFrame {
 
         imageTxt.setFont(new java.awt.Font("Traveling _Typewriter", 0, 17)); // NOI18N
         imageTxt.setPreferredSize(new java.awt.Dimension(71, 30));
+
+        labDescr.setFont(new java.awt.Font("Traveling _Typewriter", 1, 17)); // NOI18N
+        labDescr.setText("Descrição:");
+
+        descrTxtar.setColumns(20);
+        descrTxtar.setFont(new java.awt.Font("Traveling _Typewriter", 0, 14)); // NOI18N
+        descrTxtar.setLineWrap(true);
+        descrTxtar.setRows(5);
+        descrTxtar.setPreferredSize(new java.awt.Dimension(232, 100));
 
         butAdicionar.setFont(new java.awt.Font("Traveling _Typewriter", 0, 18)); // NOI18N
         butAdicionar.setText("Adicionar");
@@ -131,51 +146,6 @@ public class NewProduto extends javax.swing.JFrame {
             }
         });
 
-        jScrollPane1.setPreferredSize(new java.awt.Dimension(488, 180));
-
-        tabProds.setAutoCreateRowSorter(true);
-        tabProds.setFont(new java.awt.Font("Traveling _Typewriter", 0, 14)); // NOI18N
-        tabProds.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"1", null, null, null},
-                {"2", null, null, null},
-                {"3", null, null, null},
-                {"4", null, null, null},
-                {"5", null, null, null},
-                {"6", null, null, null},
-                {"7", null, null, null},
-                {"8", null, null, null},
-                {"9", null, null, null},
-                {"10", null, null, null}
-            },
-            new String [] {
-                "N. Produto", "Nome do Produto", "Preço do Produto", "Categoria de Produto"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.String.class, java.lang.Float.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tabProds.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(tabProds);
-
-        jLabel1.setFont(new java.awt.Font("Traveling _Typewriter", 0, 18)); // NOI18N
-        jLabel1.setText("ptas");
-
-        jLabel2.setFont(new java.awt.Font("Traveling _Typewriter", 0, 18)); // NOI18N
-        jLabel2.setText("ptas");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -183,7 +153,24 @@ public class NewProduto extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
+                        .addGap(20, 20, 20)
+                        .addComponent(nwprodLab))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(75, 75, 75)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(descrTxtar, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(butAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(50, 50, 50)
+                                .addComponent(butCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(75, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(labDescr)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(nmprodLab)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -206,27 +193,12 @@ public class NewProduto extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel1))
                             .addComponent(cbDepart, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(75, 75, 75)
-                                .addComponent(butAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(50, 50, 50)
-                                .addComponent(butCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(nwprodLab)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(40, 40, 40)
                 .addComponent(nwprodLab)
                 .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -255,13 +227,15 @@ public class NewProduto extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(imageLab)
                     .addComponent(imageTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
+                .addGap(17, 17, 17)
+                .addComponent(labDescr)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(descrTxtar, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(butAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(butCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(40, 40, 40))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 650));
@@ -273,10 +247,22 @@ public class NewProduto extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void LimpaCampos() {
+        nmprodTxt.setText("");
+        spiPVenda.setValue(4000);
+        spiPCusto.setValue(4000);
+        spiEstoq.setValue(1);
+        cbDepart.setSelectedIndex(0);
+        imageTxt.setText("");
+        descrTxtar.setText("");
+    }
+    
+    //<editor-fold defaultstate="collapsed" desc="Método não utilizado">
     private void nmprodTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nmprodTxtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nmprodTxtActionPerformed
-
+    //</editor-fold>
+    
     private void butAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butAdicionarActionPerformed
         // Método para fazer as variaveis receberem seus valores
         try {
@@ -294,27 +280,22 @@ public class NewProduto extends javax.swing.JFrame {
             (int) spiPCusto.getValue(),
             (int) spiEstoq.getValue(),
             cbDepart.getSelectedIndex() + 1,
-            imageTxt.getText());
+            imageTxt.getText(),
+            descrTxtar.getText());
             
             conectar.conectaBanco(2);
             String comando = "call hs_prod.insertProduto("
-                + "'" + nProd.getNome() + "',"
-                + "" + nProd.getPvenda() + ","
-                + "" + nProd.getPcusto() + ","
-                + "" + nProd.getEstoque() + ","
-                + "" + nProd.getDepart() + ""
+                + "'" + nProd.getNome()    + "',"
+                + ""  + nProd.getPvenda()  +  ","
+                + ""  + nProd.getPcusto()  +  ","
+                + ""  + nProd.getEstoque() +  ","
+                + ""  + nProd.getDepart()  +  ","
+                + "'" + nProd.getDescr()   + "'"
             + ");";
         
             conectar.cadastrarSQL(comando, 2);
             
-            //<editor-fold defaultstate="collapsed" desc="Limpa campos">
-            nmprodTxt.setText("");
-            spiPVenda.setValue(4000);
-            spiPCusto.setValue(4000);
-            spiEstoq.setValue(1);
-            cbDepart.setSelectedIndex(0);
-            imageTxt.setText("");
-            //</editor-fold>
+            LimpaCampos();
             
         } catch (NullPointerException e) {
             JOptionPane.showMessageDialog(null, "Algum campo não foi preenchido.");
@@ -324,21 +305,17 @@ public class NewProduto extends javax.swing.JFrame {
         
     }//GEN-LAST:event_butAdicionarActionPerformed
 
+    //<editor-fold defaultstate="collapsed" desc="Método não utilizado">
     private void cbDepartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbDepartActionPerformed
          //TODO add your handling code here:
     }//GEN-LAST:event_cbDepartActionPerformed
-
+    //</editor-fold>
+    
     private void butCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butCancelarActionPerformed
-        //<editor-fold defaultstate="collapsed" desc="Limpa campos">
-            nmprodTxt.setText("");
-            spiPVenda.setValue(4000);
-            spiPCusto.setValue(4000);
-            spiEstoq.setValue(1);
-            cbDepart.setSelectedIndex(0);
-            imageTxt.setText("");
-        //</editor-fold>
+        LimpaCampos();
         
-        
+        setDefaultCloseOperation(NewProduto.DISPOSE_ON_CLOSE);
+        new NewProduto().dispatchEvent(new WindowEvent(new NewProduto(), WindowEvent.WINDOW_CLOSING));
     }//GEN-LAST:event_butCancelarActionPerformed
 
     /**
@@ -380,14 +357,15 @@ public class NewProduto extends javax.swing.JFrame {
     private javax.swing.JButton butAdicionar;
     private javax.swing.JButton butCancelar;
     private javax.swing.JComboBox<String> cbDepart;
+    private javax.swing.JTextArea descrTxtar;
     private javax.swing.JLabel imageLab;
     private javax.swing.JTextField imageTxt;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labBG;
     private javax.swing.JLabel labDepart;
+    private javax.swing.JLabel labDescr;
     private javax.swing.JLabel labEstoq;
     private javax.swing.JLabel labPCusto;
     private javax.swing.JLabel labPVenda;
@@ -397,6 +375,5 @@ public class NewProduto extends javax.swing.JFrame {
     private javax.swing.JSpinner spiEstoq;
     private javax.swing.JSpinner spiPCusto;
     private javax.swing.JSpinner spiPVenda;
-    private javax.swing.JTable tabProds;
     // End of variables declaration//GEN-END:variables
 }

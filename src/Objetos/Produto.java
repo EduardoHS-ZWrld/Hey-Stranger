@@ -7,6 +7,7 @@ public class Produto {
     private int estoque;
     private int depart;
     private String imagem;
+    private String descr;
     
     //Métodos Especiais
     //--------------------------------------------------------------------------
@@ -66,14 +67,21 @@ public class Produto {
     public void setImagem(String imagem) {
         this.imagem = imagem;
     }   //</editor-fold>
-    
-    
+
+    //<editor-fold defaultstate="collapsed" desc="G-S Descrição">
+    public String getDescr() {
+        return descr;
+    }
+    public void setDescr(String descr) {
+        this.descr = descr;
+    }   //</editor-fold>
     //--------------------------------------------------------------------------
     
     //Métodos
     //--------------------------------------------------------------------------
     public void NewProduto(String nome,     int pvenda,     int pcusto,
-                           int estoque,     int depart,  String imagem) {
+                           int estoque,     int depart,     String imagem,
+                           String descr) {
         
         this.setNome(nome);
         this.setPvenda(pvenda);
@@ -81,6 +89,7 @@ public class Produto {
         this.setEstoque(estoque);
         this.setDepart(depart);
         this.setImagem(imagem);
+        this.setDescr(descr);
     }
     
     private void ViewProd(Produto prod){
