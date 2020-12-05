@@ -22,6 +22,8 @@ public class NewProduto extends javax.swing.JFrame {
      */
     public NewProduto() {
         initComponents();
+        
+        setDefaultCloseOperation(NewProduto.DISPOSE_ON_CLOSE);
     }
 
     /**
@@ -55,11 +57,14 @@ public class NewProduto extends javax.swing.JFrame {
         butCancelar = new javax.swing.JButton();
         labBG = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setLocation(new java.awt.Point(433, 59));
         setMaximumSize(new java.awt.Dimension(500, 650));
+        setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         nwprodLab.setFont(new java.awt.Font("Traveling _Typewriter", 1, 24)); // NOI18N
         nwprodLab.setText("Novo Produto");
@@ -146,6 +151,9 @@ public class NewProduto extends javax.swing.JFrame {
             }
         });
 
+        labBG.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\Desktop\\RPG\\Sessions\\Fichas\\Imagens extras\\Papel Velho\\SPapelVelho 1 - Copia.png")); // NOI18N
+        labBG.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -194,6 +202,11 @@ public class NewProduto extends javax.swing.JFrame {
                                 .addComponent(jLabel1))
                             .addComponent(cbDepart, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(labBG, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -236,13 +249,14 @@ public class NewProduto extends javax.swing.JFrame {
                     .addComponent(butAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(butCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(40, 40, 40))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(labBG, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 650));
-
-        labBG.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\Desktop\\RPG\\Sessions\\Fichas\\Imagens extras\\Papel Velho\\SPapelVelho 1 - Copia.png")); // NOI18N
-        labBG.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        getContentPane().add(labBG, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 650));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -312,10 +326,7 @@ public class NewProduto extends javax.swing.JFrame {
     //</editor-fold>
     
     private void butCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butCancelarActionPerformed
-        LimpaCampos();
-        
-        setDefaultCloseOperation(NewProduto.DISPOSE_ON_CLOSE);
-        new NewProduto().dispatchEvent(new WindowEvent(new NewProduto(), WindowEvent.WINDOW_CLOSING));
+        dispose();
     }//GEN-LAST:event_butCancelarActionPerformed
 
     /**

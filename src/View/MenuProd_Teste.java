@@ -39,8 +39,10 @@ public class MenuProd_Teste extends javax.swing.JFrame {
         labelQuant = new javax.swing.JLabel();
         sliQuant = new javax.swing.JSlider();
         buttonFiltrar = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
         scroll = new javax.swing.JScrollPane();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuCliente = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -59,10 +61,9 @@ public class MenuProd_Teste extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(900, 600));
         setResizable(false);
         setSize(new java.awt.Dimension(900, 600));
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelFiltro.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        panelFiltro.setPreferredSize(new java.awt.Dimension(250, 575));
+        panelFiltro.setPreferredSize(new java.awt.Dimension(250, 570));
 
         labFiltro.setFont(new java.awt.Font("Mom´sTypewriter", 0, 28)); // NOI18N
         labFiltro.setText("Filtro");
@@ -101,6 +102,9 @@ public class MenuProd_Teste extends javax.swing.JFrame {
         buttonFiltrar.setText("Filtrar");
         buttonFiltrar.setPreferredSize(new java.awt.Dimension(100, 30));
 
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\Documents\\Facens\\2º Semestre\\Linguagem de Programação - Prof. Márcio\\Hey-Stranger\\src\\Imagens\\Telas_Views\\MenuProd2.png")); // NOI18N
+        jLabel4.setText("jLabel4");
+
         javax.swing.GroupLayout panelFiltroLayout = new javax.swing.GroupLayout(panelFiltro);
         panelFiltro.setLayout(panelFiltroLayout);
         panelFiltroLayout.setHorizontalGroup(
@@ -109,20 +113,8 @@ public class MenuProd_Teste extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addComponent(cbDeparts, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(panelFiltroLayout.createSequentialGroup()
-                .addGroup(panelFiltroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelFiltroLayout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addComponent(labFiltro))
-                    .addGroup(panelFiltroLayout.createSequentialGroup()
-                        .addGap(69, 69, 69)
-                        .addComponent(labelQuant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelFiltroLayout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addComponent(buttonFiltrar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(48, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelFiltroLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 15, Short.MAX_VALUE)
                 .addGroup(panelFiltroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(sliQuant, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panelFiltroLayout.createSequentialGroup()
@@ -134,11 +126,25 @@ public class MenuProd_Teste extends javax.swing.JFrame {
                             .addComponent(spiVMax, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(spiVMin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(15, 15, 15))
+            .addGroup(panelFiltroLayout.createSequentialGroup()
+                .addGroup(panelFiltroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelFiltroLayout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addComponent(labFiltro))
+                    .addGroup(panelFiltroLayout.createSequentialGroup()
+                        .addGap(69, 69, 69)
+                        .addComponent(labelQuant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelFiltroLayout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addComponent(buttonFiltrar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel4))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelFiltroLayout.setVerticalGroup(
             panelFiltroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelFiltroLayout.createSequentialGroup()
-                .addContainerGap(42, Short.MAX_VALUE)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addComponent(labFiltro)
                 .addGap(65, 65, 65)
                 .addComponent(cbDeparts, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -159,14 +165,16 @@ public class MenuProd_Teste extends javax.swing.JFrame {
                 .addGap(55, 55, 55))
         );
 
-        getContentPane().add(panelFiltro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        scroll.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel2.setText("jLabel2");
+        jLabel2.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jLabel2.setPreferredSize(new java.awt.Dimension(100, 100));
         scroll.setViewportView(jLabel2);
         jLabel2.getAccessibleContext().setAccessibleDescription("");
 
-        getContentPane().add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, 650, 575));
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\Documents\\Facens\\2º Semestre\\Linguagem de Programação - Prof. Márcio\\Hey-Stranger\\src\\Imagens\\Telas_Views\\MenuProd1.png")); // NOI18N
+        jLabel3.setPreferredSize(new java.awt.Dimension(900, 4));
 
         jMenuBar1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -198,6 +206,26 @@ public class MenuProd_Teste extends javax.swing.JFrame {
         jMenuBar1.add(menuFuncionario);
 
         setJMenuBar(jMenuBar1);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(panelFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(scroll, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1, 1, 1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(scroll, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -251,6 +279,8 @@ public class MenuProd_Teste extends javax.swing.JFrame {
     private javax.swing.JLabel imagemTeste;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
