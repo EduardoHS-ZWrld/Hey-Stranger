@@ -36,7 +36,8 @@ public class NewClient extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         NomeCompleto = new javax.swing.JLabel();
         nomecTxt = new javax.swing.JTextField();
-        cadastrarSe = new javax.swing.JButton();
+        labCPF = new javax.swing.JLabel();
+        cpfTxt = new javax.swing.JFormattedTextField();
         DataNascença = new javax.swing.JLabel();
         monthTxt = new javax.swing.JComboBox<>();
         dayTxt = new javax.swing.JComboBox<>();
@@ -53,9 +54,9 @@ public class NewClient extends javax.swing.JFrame {
         passwTxt = new javax.swing.JPasswordField();
         cpasswTxt = new javax.swing.JPasswordField();
         yearTxt = new javax.swing.JComboBox<>();
+        cadastrarSe = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        cpfTxt = new javax.swing.JFormattedTextField();
-        iconBG = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -65,97 +66,18 @@ public class NewClient extends javax.swing.JFrame {
         setUndecorated(true);
         setResizable(false);
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel2.setBackground(new java.awt.Color(109, 98, 131));
+        jPanel2.setPreferredSize(new java.awt.Dimension(506, 600));
 
         NomeCompleto.setFont(new java.awt.Font("Sitka Small", 0, 15)); // NOI18N
+        NomeCompleto.setForeground(new java.awt.Color(20, 20, 20));
         NomeCompleto.setText("Nome Completo:");
-        jPanel2.add(NomeCompleto, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 60, -1, -1));
 
         nomecTxt.setFont(new java.awt.Font("Traveling _Typewriter", 0, 18)); // NOI18N
-        jPanel2.add(nomecTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(538, 55, 342, -1));
 
-        cadastrarSe.setFont(new java.awt.Font("Sitka Small", 0, 14)); // NOI18N
-        cadastrarSe.setText("Se cadastrar");
-        cadastrarSe.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cadastrarSeActionPerformed(evt);
-            }
-        });
-        jPanel2.add(cadastrarSe, new org.netbeans.lib.awtextra.AbsoluteConstraints(726, 487, 154, 58));
-
-        DataNascença.setFont(new java.awt.Font("Sitka Small", 0, 15)); // NOI18N
-        DataNascença.setText("Data de Nascença:");
-        jPanel2.add(DataNascença, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 108, -1, -1));
-
-        monthTxt.setFont(new java.awt.Font("Traveling _Typewriter", 0, 13)); // NOI18N
-        monthTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro" }));
-        monthTxt.setToolTipText("Mês");
-        monthTxt.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        monthTxt.setName("Mês"); // NOI18N
-        monthTxt.setPreferredSize(new java.awt.Dimension(69, 30));
-        jPanel2.add(monthTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(743, 103, 137, -1));
-
-        dayTxt.setFont(new java.awt.Font("Traveling _Typewriter", 0, 12)); // NOI18N
-        dayTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
-        dayTxt.setMinimumSize(new java.awt.Dimension(55, 30));
-        dayTxt.setPreferredSize(new java.awt.Dimension(57, 30));
-        jPanel2.add(dayTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(743, 140, -1, -1));
-
-        Estado.setFont(new java.awt.Font("Sitka Small", 0, 15)); // NOI18N
-        Estado.setText("Estado:");
-        jPanel2.add(Estado, new org.netbeans.lib.awtextra.AbsoluteConstraints(414, 198, -1, -1));
-
-        estadoTxt.setFont(new java.awt.Font("Traveling _Typewriter", 0, 14)); // NOI18N
-        estadoTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
-        estadoTxt.setPreferredSize(new java.awt.Dimension(69, 30));
-        jPanel2.add(estadoTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 193, 60, -1));
-
-        Cidade.setFont(new java.awt.Font("Sitka Small", 0, 15)); // NOI18N
-        Cidade.setText("Cidade:");
-        jPanel2.add(Cidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 198, -1, -1));
-
-        endeTxt.setFont(new java.awt.Font("Traveling _Typewriter", 0, 18)); // NOI18N
-        jPanel2.add(endeTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(414, 255, 466, -1));
-
-        Endereço.setFont(new java.awt.Font("Sitka Small", 0, 15)); // NOI18N
-        Endereço.setText("Endereço:");
-        jPanel2.add(Endereço, new org.netbeans.lib.awtextra.AbsoluteConstraints(414, 229, -1, -1));
-
-        cityTxt.setFont(new java.awt.Font("Traveling _Typewriter", 0, 18)); // NOI18N
-        jPanel2.add(cityTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(673, 192, 207, -1));
-
-        Email.setFont(new java.awt.Font("Sitka Small", 0, 15)); // NOI18N
-        Email.setText("E-mail:");
-        jPanel2.add(Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(414, 309, -1, -1));
-
-        emailTxt.setFont(new java.awt.Font("Traveling _Typewriter", 0, 18)); // NOI18N
-        jPanel2.add(emailTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(478, 303, 402, -1));
-
-        Senha.setFont(new java.awt.Font("Sitka Small", 0, 15)); // NOI18N
-        Senha.setText("Senha:");
-        jPanel2.add(Senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 340, -1, -1));
-
-        SenhaConf.setFont(new java.awt.Font("Sitka Small", 0, 15)); // NOI18N
-        SenhaConf.setText("Confirmação de Senha:");
-        jPanel2.add(SenhaConf, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 400, -1, -1));
-
-        passwTxt.setFont(new java.awt.Font("Traveling _Typewriter", 0, 18)); // NOI18N
-        jPanel2.add(passwTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(414, 365, 466, -1));
-
-        cpasswTxt.setFont(new java.awt.Font("Traveling _Typewriter", 0, 18)); // NOI18N
-        cpasswTxt.setToolTipText("");
-        jPanel2.add(cpasswTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(414, 423, 466, -1));
-
-        yearTxt.setFont(new java.awt.Font("Traveling _Typewriter", 0, 14)); // NOI18N
-        yearTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990", "1989", "1988", "1987", "1986", "1985", "1984", "1983", "1982", "1981", "1980", "1979", "1978", "1977", "1976", "1975", "1974", "1973", "1972", "1971", "1970", "1969", "1968", "1967", "1966", "1965", "1964", "1963", "1962", "1961", "1960", "1959", "1958", "1957", "1956", "1955", "1954", "1953", "1952", "1951", "1950", "1949", "1948", "1947", "1946", "1945", "1944", "1943", "1942", "1941", "1940", "1939", "1938", "1937", "1936", "1935", "1934", "1933", "1932", "1931", "1930" }));
-        yearTxt.setMinimumSize(new java.awt.Dimension(60, 30));
-        yearTxt.setPreferredSize(new java.awt.Dimension(60, 30));
-        jPanel2.add(yearTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(806, 140, 74, -1));
-
-        jLabel1.setFont(new java.awt.Font("Sitka Small", 0, 15)); // NOI18N
-        jLabel1.setText("CPF:");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(414, 108, -1, -1));
+        labCPF.setFont(new java.awt.Font("Sitka Small", 0, 15)); // NOI18N
+        labCPF.setForeground(new java.awt.Color(20, 20, 20));
+        labCPF.setText("CPF:");
 
         try {
             cpfTxt.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
@@ -164,21 +86,218 @@ public class NewClient extends javax.swing.JFrame {
         }
         cpfTxt.setFont(new java.awt.Font("Traveling _Typewriter", 0, 13)); // NOI18N
         cpfTxt.setPreferredSize(new java.awt.Dimension(64, 30));
-        jPanel2.add(cpfTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(449, 104, 139, -1));
 
-        iconBG.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\Documents\\Facens\\2º Semestre\\Linguagem de Programação - Prof. Márcio\\Hey-Stranger\\src\\Imagens\\Telas_Views\\SingIn.png")); // NOI18N
-        jPanel2.add(iconBG, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 600));
-        iconBG.getAccessibleContext().setAccessibleParent(null);
+        DataNascença.setFont(new java.awt.Font("Sitka Small", 0, 15)); // NOI18N
+        DataNascença.setForeground(new java.awt.Color(20, 20, 20));
+        DataNascença.setText("Data de Nascença:");
+
+        monthTxt.setFont(new java.awt.Font("Traveling _Typewriter", 0, 13)); // NOI18N
+        monthTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro" }));
+        monthTxt.setToolTipText("Mês");
+        monthTxt.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        monthTxt.setName("Mês"); // NOI18N
+        monthTxt.setPreferredSize(new java.awt.Dimension(69, 30));
+
+        dayTxt.setFont(new java.awt.Font("Traveling _Typewriter", 0, 12)); // NOI18N
+        dayTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        dayTxt.setMinimumSize(new java.awt.Dimension(55, 30));
+        dayTxt.setPreferredSize(new java.awt.Dimension(57, 30));
+
+        Estado.setFont(new java.awt.Font("Sitka Small", 0, 15)); // NOI18N
+        Estado.setForeground(new java.awt.Color(20, 20, 20));
+        Estado.setText("Estado:");
+
+        estadoTxt.setFont(new java.awt.Font("Traveling _Typewriter", 0, 14)); // NOI18N
+        estadoTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
+        estadoTxt.setPreferredSize(new java.awt.Dimension(69, 30));
+
+        Cidade.setFont(new java.awt.Font("Sitka Small", 0, 15)); // NOI18N
+        Cidade.setForeground(new java.awt.Color(20, 20, 20));
+        Cidade.setText("Cidade:");
+
+        endeTxt.setFont(new java.awt.Font("Traveling _Typewriter", 0, 18)); // NOI18N
+
+        Endereço.setFont(new java.awt.Font("Sitka Small", 0, 15)); // NOI18N
+        Endereço.setForeground(new java.awt.Color(20, 20, 20));
+        Endereço.setText("Endereço:");
+
+        cityTxt.setFont(new java.awt.Font("Traveling _Typewriter", 0, 18)); // NOI18N
+
+        Email.setFont(new java.awt.Font("Sitka Small", 0, 15)); // NOI18N
+        Email.setForeground(new java.awt.Color(20, 20, 20));
+        Email.setText("E-mail:");
+
+        emailTxt.setFont(new java.awt.Font("Traveling _Typewriter", 0, 18)); // NOI18N
+
+        Senha.setFont(new java.awt.Font("Sitka Small", 0, 15)); // NOI18N
+        Senha.setForeground(new java.awt.Color(20, 20, 20));
+        Senha.setText("Senha:");
+
+        SenhaConf.setFont(new java.awt.Font("Sitka Small", 0, 15)); // NOI18N
+        SenhaConf.setForeground(new java.awt.Color(20, 20, 20));
+        SenhaConf.setText("Confirmação de Senha:");
+
+        passwTxt.setFont(new java.awt.Font("Traveling _Typewriter", 0, 18)); // NOI18N
+
+        cpasswTxt.setFont(new java.awt.Font("Traveling _Typewriter", 0, 18)); // NOI18N
+        cpasswTxt.setToolTipText("");
+
+        yearTxt.setFont(new java.awt.Font("Traveling _Typewriter", 0, 14)); // NOI18N
+        yearTxt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990", "1989", "1988", "1987", "1986", "1985", "1984", "1983", "1982", "1981", "1980", "1979", "1978", "1977", "1976", "1975", "1974", "1973", "1972", "1971", "1970", "1969", "1968", "1967", "1966", "1965", "1964", "1963", "1962", "1961", "1960", "1959", "1958", "1957", "1956", "1955", "1954", "1953", "1952", "1951", "1950", "1949", "1948", "1947", "1946", "1945", "1944", "1943", "1942", "1941", "1940", "1939", "1938", "1937", "1936", "1935", "1934", "1933", "1932", "1931", "1930" }));
+        yearTxt.setMinimumSize(new java.awt.Dimension(60, 30));
+        yearTxt.setPreferredSize(new java.awt.Dimension(60, 30));
+
+        cadastrarSe.setBackground(new java.awt.Color(217, 182, 255));
+        cadastrarSe.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
+        cadastrarSe.setForeground(new java.awt.Color(20, 20, 20));
+        cadastrarSe.setText("Se cadastrar");
+        cadastrarSe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cadastrarSeActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(NomeCompleto)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nomecTxt))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(cadastrarSe, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(labCPF)
+                                .addGap(1, 1, 1)
+                                .addComponent(cpfTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12)
+                                .addComponent(DataNascença)
+                                .addGap(1, 1, 1)
+                                .addComponent(monthTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(Estado)
+                                .addGap(9, 9, 9)
+                                .addComponent(estadoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(60, 60, 60)
+                                .addComponent(Cidade)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cityTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Endereço)
+                            .addComponent(endeTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 466, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(Email)
+                                .addGap(9, 9, 9)
+                                .addComponent(emailTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Senha)
+                            .addComponent(passwTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 466, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SenhaConf)
+                            .addComponent(cpasswTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 466, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(dayTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6)
+                                .addComponent(yearTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(4, 20, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(NomeCompleto)
+                    .addComponent(nomecTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(labCPF))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(cpfTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(DataNascença))
+                    .addComponent(monthTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dayTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(yearTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(Estado))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(estadoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(Cidade))
+                    .addComponent(cityTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(6, 6, 6)
+                .addComponent(Endereço)
+                .addGap(6, 6, 6)
+                .addComponent(endeTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(Email))
+                    .addComponent(emailTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addComponent(Senha)
+                .addGap(5, 5, 5)
+                .addComponent(passwTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addComponent(SenhaConf)
+                .addGap(3, 3, 3)
+                .addComponent(cpasswTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addComponent(cadastrarSe, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel1.setPreferredSize(new java.awt.Dimension(394, 600));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\Documents\\Facens\\2º Semestre\\Linguagem de Programação - Prof. Márcio\\Hey-Stranger\\src\\Imagens\\Telas_Views\\SingIn-NewClient\\SingIn1.png")); // NOI18N
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel1)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel1)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 900, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -298,9 +417,10 @@ public class NewClient extends javax.swing.JFrame {
     private javax.swing.JTextField emailTxt;
     private javax.swing.JTextField endeTxt;
     private javax.swing.JComboBox<String> estadoTxt;
-    private javax.swing.JLabel iconBG;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel labCPF;
     private javax.swing.JComboBox<String> monthTxt;
     private javax.swing.JTextField nomecTxt;
     private javax.swing.JPasswordField passwTxt;

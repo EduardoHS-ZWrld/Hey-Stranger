@@ -35,8 +35,14 @@ public class NewProduto extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel3 = new javax.swing.JPanel();
+        butAdicionar = new javax.swing.JButton();
+        butCancelar = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        nwprodLab = new javax.swing.JLabel();
         nmprodLab = new javax.swing.JLabel();
         nmprodTxt = new javax.swing.JTextField();
         labPVenda = new javax.swing.JLabel();
@@ -53,23 +59,108 @@ public class NewProduto extends javax.swing.JFrame {
         imageTxt = new javax.swing.JTextField();
         labDescr = new javax.swing.JLabel();
         descrTxtar = new javax.swing.JTextArea();
-        butAdicionar = new javax.swing.JButton();
-        butCancelar = new javax.swing.JButton();
-        labBG = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setLocation(new java.awt.Point(433, 59));
-        setMaximumSize(new java.awt.Dimension(500, 650));
+        setMaximumSize(new java.awt.Dimension(500, 750));
         setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel3.setBackground(new java.awt.Color(20, 20, 20));
+        jPanel3.setForeground(new java.awt.Color(20, 20, 20));
+        jPanel3.setPreferredSize(new java.awt.Dimension(500, 107));
 
-        nwprodLab.setFont(new java.awt.Font("Traveling _Typewriter", 1, 24)); // NOI18N
-        nwprodLab.setText("Novo Produto");
+        butAdicionar.setBackground(new java.awt.Color(217, 182, 255));
+        butAdicionar.setFont(new java.awt.Font("Traveling _Typewriter", 0, 18)); // NOI18N
+        butAdicionar.setText("Adicionar");
+        butAdicionar.setPreferredSize(new java.awt.Dimension(150, 45));
+        butAdicionar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butAdicionarActionPerformed(evt);
+            }
+        });
 
-        nmprodLab.setFont(new java.awt.Font("Traveling _Typewriter", 1, 17)); // NOI18N
+        butCancelar.setBackground(new java.awt.Color(217, 182, 255));
+        butCancelar.setFont(new java.awt.Font("Traveling _Typewriter", 0, 18)); // NOI18N
+        butCancelar.setText("Cancelar");
+        butCancelar.setPreferredSize(new java.awt.Dimension(150, 45));
+        butCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butCancelarActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\Documents\\Facens\\2º Semestre\\Linguagem de Programação - Prof. Márcio\\Hey-Stranger\\src\\Imagens\\Telas_Views\\NewProduto\\NewProduto4.png")); // NOI18N
+        jLabel5.setPreferredSize(new java.awt.Dimension(500, 4));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(75, 75, 75)
+                .addComponent(butAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(butCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(butAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(butCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(29, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 543, 500, -1));
+
+        jPanel2.setBackground(new java.awt.Color(20, 20, 20));
+        jPanel2.setForeground(new java.awt.Color(20, 20, 20));
+        jPanel2.setPreferredSize(new java.awt.Dimension(500, 122));
+
+        jLabel3.setBackground(new java.awt.Color(187, 187, 187));
+        jLabel3.setFont(new java.awt.Font("Sitka Small", 1, 28)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(217, 182, 255));
+        jLabel3.setText("Novo Produto");
+
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\Documents\\Facens\\2º Semestre\\Linguagem de Programação - Prof. Márcio\\Hey-Stranger\\src\\Imagens\\Telas_Views\\NewProduto\\NewProduto2.png")); // NOI18N
+        jLabel4.setPreferredSize(new java.awt.Dimension(500, 4));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(147, 147, 147)
+                .addComponent(jLabel3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0))
+        );
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, -1));
+
+        jPanel1.setBackground(new java.awt.Color(109, 98, 131));
+        jPanel1.setPreferredSize(new java.awt.Dimension(500, 528));
+
+        nmprodLab.setFont(new java.awt.Font("Sitka Small", 1, 17)); // NOI18N
         nmprodLab.setText("Nome do Produto:");
 
         nmprodTxt.setFont(new java.awt.Font("Traveling _Typewriter", 0, 17)); // NOI18N
@@ -79,34 +170,35 @@ public class NewProduto extends javax.swing.JFrame {
             }
         });
 
-        labPVenda.setFont(new java.awt.Font("Traveling _Typewriter", 1, 17)); // NOI18N
+        labPVenda.setFont(new java.awt.Font("Sitka Small", 1, 17)); // NOI18N
         labPVenda.setText("Preço de Venda:");
 
         spiPVenda.setFont(new java.awt.Font("Traveling _Typewriter", 0, 17)); // NOI18N
         spiPVenda.setModel(new javax.swing.SpinnerNumberModel(4000, 100, 8000, 100));
         spiPVenda.setPreferredSize(new java.awt.Dimension(100, 30));
 
-        jLabel1.setFont(new java.awt.Font("Traveling _Typewriter", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Sitka Banner", 0, 18)); // NOI18N
         jLabel1.setText("ptas");
 
-        labPCusto.setFont(new java.awt.Font("Traveling _Typewriter", 1, 17)); // NOI18N
+        labPCusto.setFont(new java.awt.Font("Sitka Small", 1, 17)); // NOI18N
         labPCusto.setText("Preço de Custo:");
 
         spiPCusto.setFont(new java.awt.Font("Traveling _Typewriter", 0, 17)); // NOI18N
         spiPCusto.setModel(new javax.swing.SpinnerNumberModel(4000, 100, 8000, 100));
         spiPCusto.setPreferredSize(new java.awt.Dimension(100, 30));
 
-        jLabel2.setFont(new java.awt.Font("Traveling _Typewriter", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Sitka Banner", 0, 18)); // NOI18N
         jLabel2.setText("ptas");
+        jLabel2.setPreferredSize(new java.awt.Dimension(29, 20));
 
-        labEstoq.setFont(new java.awt.Font("Traveling _Typewriter", 1, 17)); // NOI18N
+        labEstoq.setFont(new java.awt.Font("Sitka Small", 1, 17)); // NOI18N
         labEstoq.setText("Estoque:");
 
         spiEstoq.setFont(new java.awt.Font("Traveling _Typewriter", 0, 17)); // NOI18N
         spiEstoq.setModel(new javax.swing.SpinnerNumberModel(1, 1, 200, 1));
         spiEstoq.setPreferredSize(new java.awt.Dimension(100, 30));
 
-        labDepart.setFont(new java.awt.Font("Traveling _Typewriter", 1, 17)); // NOI18N
+        labDepart.setFont(new java.awt.Font("Sitka Small", 1, 17)); // NOI18N
         labDepart.setText("Departamento:");
 
         cbDepart.setFont(new java.awt.Font("Traveling _Typewriter", 0, 17)); // NOI18N
@@ -118,13 +210,13 @@ public class NewProduto extends javax.swing.JFrame {
             }
         });
 
-        imageLab.setFont(new java.awt.Font("Traveling _Typewriter", 1, 17)); // NOI18N
+        imageLab.setFont(new java.awt.Font("Sitka Small", 1, 17)); // NOI18N
         imageLab.setText("Endereço Imagem:");
 
         imageTxt.setFont(new java.awt.Font("Traveling _Typewriter", 0, 17)); // NOI18N
         imageTxt.setPreferredSize(new java.awt.Dimension(71, 30));
 
-        labDescr.setFont(new java.awt.Font("Traveling _Typewriter", 1, 17)); // NOI18N
+        labDescr.setFont(new java.awt.Font("Sitka Small", 1, 17)); // NOI18N
         labDescr.setText("Descrição:");
 
         descrTxtar.setColumns(20);
@@ -133,45 +225,10 @@ public class NewProduto extends javax.swing.JFrame {
         descrTxtar.setRows(5);
         descrTxtar.setPreferredSize(new java.awt.Dimension(232, 100));
 
-        butAdicionar.setFont(new java.awt.Font("Traveling _Typewriter", 0, 18)); // NOI18N
-        butAdicionar.setText("Adicionar");
-        butAdicionar.setPreferredSize(new java.awt.Dimension(150, 45));
-        butAdicionar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                butAdicionarActionPerformed(evt);
-            }
-        });
-
-        butCancelar.setFont(new java.awt.Font("Traveling _Typewriter", 0, 18)); // NOI18N
-        butCancelar.setText("Cancelar");
-        butCancelar.setPreferredSize(new java.awt.Dimension(150, 45));
-        butCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                butCancelarActionPerformed(evt);
-            }
-        });
-
-        labBG.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\Desktop\\RPG\\Sessions\\Fichas\\Imagens extras\\Papel Velho\\SPapelVelho 1 - Copia.png")); // NOI18N
-        labBG.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(nwprodLab))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(75, 75, 75)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(descrTxtar, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(butAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(50, 50, 50)
-                                .addComponent(butCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(75, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,19 +238,18 @@ public class NewProduto extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(nmprodLab)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(labPVenda)
-                                .addComponent(labPCusto))
+                            .addComponent(labPVenda)
                             .addComponent(imageLab)
                             .addComponent(labEstoq)
-                            .addComponent(labDepart))
+                            .addComponent(labDepart)
+                            .addComponent(labPCusto))
                         .addGap(18, 18, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(nmprodTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(spiPCusto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel2))
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(spiEstoq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(imageTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -202,18 +258,15 @@ public class NewProduto extends javax.swing.JFrame {
                                 .addComponent(jLabel1))
                             .addComponent(cbDepart, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(labBG, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(75, 75, 75)
+                .addComponent(descrTxtar, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(75, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(nwprodLab)
-                .addGap(30, 30, 30)
+                .addGap(8, 8, 8)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nmprodLab)
                     .addComponent(nmprodTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -224,10 +277,10 @@ public class NewProduto extends javax.swing.JFrame {
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(spiPCusto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel2))
-                    .addComponent(labPCusto))
+                        .addComponent(labPCusto)))
                 .addGap(17, 17, 17)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(spiEstoq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -242,21 +295,12 @@ public class NewProduto extends javax.swing.JFrame {
                     .addComponent(imageTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17)
                 .addComponent(labDescr)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(descrTxtar, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(butAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(butCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(labBG, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(4, 4, 4)
+                .addComponent(descrTxtar, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(13, 13, 13))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 650));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 122, 500, 421));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -373,8 +417,12 @@ public class NewProduto extends javax.swing.JFrame {
     private javax.swing.JTextField imageTxt;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel labBG;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel labDepart;
     private javax.swing.JLabel labDescr;
     private javax.swing.JLabel labEstoq;
@@ -382,7 +430,6 @@ public class NewProduto extends javax.swing.JFrame {
     private javax.swing.JLabel labPVenda;
     private javax.swing.JLabel nmprodLab;
     private javax.swing.JTextField nmprodTxt;
-    private javax.swing.JLabel nwprodLab;
     private javax.swing.JSpinner spiEstoq;
     private javax.swing.JSpinner spiPCusto;
     private javax.swing.JSpinner spiPVenda;

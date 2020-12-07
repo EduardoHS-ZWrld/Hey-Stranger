@@ -36,4 +36,9 @@ create procedure insertProduto(nome varchar(40),
                                descr		varchar(500))
 begin
 	insert into Produto values (null, nome, pvenda, pcusto, estoque, depart, descr, null);
+ end$
+ 
+create procedure identificaProduto(n int)
+begin
+	select nome, pvenda, estoque, descr from Produto where idProd = n;
 end$

@@ -92,8 +92,11 @@ public class Produto {
         this.setDescr(descr);
     }
     
-    private void ViewProd(Produto prod){
-        
+    public void NewProduto(String nome, int pvenda, int estoque, String descr){
+        this.setNome(nome);
+        this.setPvenda(pvenda);
+        this.setEstoque(estoque);
+        this.setDescr(descr);
     }
     //--------------------------------------------------------------------------
 }

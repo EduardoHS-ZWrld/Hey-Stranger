@@ -39,7 +39,8 @@ public class SingIn extends javax.swing.JFrame {
         passwTxt = new javax.swing.JPasswordField();
         EntrarButt = new javax.swing.JButton();
         cadastreSe = new javax.swing.JButton();
-        iconBG = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -50,27 +51,29 @@ public class SingIn extends javax.swing.JFrame {
         setMaximumSize(new java.awt.Dimension(900, 600));
         setMinimumSize(new java.awt.Dimension(900, 600));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(900, 600));
         setResizable(false);
         setSize(new java.awt.Dimension(900, 600));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel2.setBackground(new java.awt.Color(109, 98, 131));
+        jPanel2.setPreferredSize(new java.awt.Dimension(506, 600));
 
-        Email.setFont(new java.awt.Font("Sitka Small", 0, 24)); // NOI18N
-        Email.setText("E-mail");
-        jPanel2.add(Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 120, -1, -1));
+        Email.setBackground(new java.awt.Color(20, 20, 20));
+        Email.setFont(new java.awt.Font("Sitka Small", 1, 24)); // NOI18N
+        Email.setForeground(new java.awt.Color(20, 20, 20));
+        Email.setText("E-mail:");
 
         emailTxt.setFont(new java.awt.Font("Traveling _Typewriter", 0, 16)); // NOI18N
-        jPanel2.add(emailTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, 400, -1));
 
-        Password.setFont(new java.awt.Font("Sitka Small", 0, 24)); // NOI18N
-        Password.setText("Password");
-        jPanel2.add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 240, -1, -1));
+        Password.setFont(new java.awt.Font("Sitka Small", 1, 24)); // NOI18N
+        Password.setForeground(new java.awt.Color(20, 20, 20));
+        Password.setText("Senha:");
 
         passwTxt.setFont(new java.awt.Font("Traveling _Typewriter", 0, 16)); // NOI18N
-        jPanel2.add(passwTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 270, 400, -1));
 
+        EntrarButt.setBackground(new java.awt.Color(217, 182, 255));
         EntrarButt.setFont(new java.awt.Font("Sitka Small", 1, 20)); // NOI18N
+        EntrarButt.setForeground(new java.awt.Color(20, 20, 20));
         EntrarButt.setText("Entrar");
         EntrarButt.setPreferredSize(new java.awt.Dimension(160, 60));
         EntrarButt.addActionListener(new java.awt.event.ActionListener() {
@@ -78,9 +81,10 @@ public class SingIn extends javax.swing.JFrame {
                 EntrarButtActionPerformed(evt);
             }
         });
-        jPanel2.add(EntrarButt, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 440, -1, -1));
 
+        cadastreSe.setBackground(new java.awt.Color(217, 182, 255));
         cadastreSe.setFont(new java.awt.Font("Sitka Small", 1, 14)); // NOI18N
+        cadastreSe.setForeground(new java.awt.Color(20, 20, 20));
         cadastreSe.setText("Cadastre-se");
         cadastreSe.setPreferredSize(new java.awt.Dimension(160, 30));
         cadastreSe.addActionListener(new java.awt.event.ActionListener() {
@@ -88,21 +92,69 @@ public class SingIn extends javax.swing.JFrame {
                 cadastreSeActionPerformed(evt);
             }
         });
-        jPanel2.add(cadastreSe, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 510, -1, -1));
 
-        iconBG.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\Documents\\Facens\\2º Semestre\\Linguagem de Programação - Prof. Márcio\\Hey-Stranger\\src\\Imagens\\Telas_Views\\SingIn.png")); // NOI18N
-        jPanel2.add(iconBG, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 600));
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Email)
+                    .addComponent(Password)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(emailTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(passwTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(50, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(EntrarButt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cadastreSe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addComponent(Email)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(emailTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(Password)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(passwTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 196, Short.MAX_VALUE)
+                .addComponent(EntrarButt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cadastreSe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50))
+        );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(394, 0, -1, -1));
+
+        jPanel1.setPreferredSize(new java.awt.Dimension(394, 600));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\Documents\\Facens\\2º Semestre\\Linguagem de Programação - Prof. Márcio\\Hey-Stranger\\src\\Imagens\\Telas_Views\\SingIn-NewClient\\SingIn1.png")); // NOI18N
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel1)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel1)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -181,7 +233,8 @@ public class SingIn extends javax.swing.JFrame {
     private javax.swing.JLabel Password;
     private javax.swing.JButton cadastreSe;
     private javax.swing.JTextField emailTxt;
-    private javax.swing.JLabel iconBG;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPasswordField passwTxt;
     // End of variables declaration//GEN-END:variables

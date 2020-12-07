@@ -1,5 +1,6 @@
 package Conexões;
 
+import Objetos.Produto;
 import java.sql.*;
 import javax.swing.JOptionPane;
 
@@ -21,6 +22,12 @@ public class MySQL {
     private String usuario = "root";
     private String senha = "EdEdhs29182@MySQL";
     private String passw = null;
+    
+    private String anome;
+    private int apreço;
+    private int aestoq;
+    private String adescr;
+    private int i = 0;
     //--------------------------------------------------------------------------
 
     //Constructor
@@ -66,6 +73,41 @@ public class MySQL {
     public void setPassw(String passw) {
         this.passw = passw;
     }
+
+    //<editor-fold defaultstate="collapsed" desc="G-S Identificar Prod">
+    public String getAnome() {
+        return anome;
+    }
+
+    public void setAnome(String anome) {
+        this.anome = anome;
+    }
+
+    public int getApreço() {
+        return apreço;
+    }
+
+    public void setApreço(int apreço) {
+        this.apreço = apreço;
+    }
+
+    public int getAestoq() {
+        return aestoq;
+    }
+
+    public void setAestoq(int aestoq) {
+        this.aestoq = aestoq;
+    }
+
+    public String getAdescr() {
+        return adescr;
+    }
+
+    public void setAdescr(String adescr) {
+        this.adescr = adescr;
+    }
+    //</editor-fold>
+    
     //--------------------------------------------------------------------------
     
     //Métodos
@@ -128,6 +170,45 @@ public class MySQL {
             
         } catch (SQLException ex) {
             ex.printStackTrace();
+        }
+    }
+    
+    public void identificaProd(int n) {
+        try {
+            String SQL = "call hs_prod.identificaProduto("+ n +");";
+            
+            this.setStatement(getConn().createStatement());
+            resultSet = this.getStatement().executeQuery(SQL); 
+            
+            while (resultSet.next()) {
+               
+               switch (i) {
+                   case 0:
+                       this.anome = resultSet.getString("nome");
+                       System.out.println(this.anome);
+                       this.apreço = resultSet.getInt("pvenda");
+                       System.out.println(this.apreço);
+                       this.aestoq = resultSet.getInt("estoque");
+                       System.out.println(this.aestoq);
+                       this.adescr = resultSet.getString("descr");
+                       System.out.println(this.adescr);
+                       break;
+                   case 1:
+                       break;
+                   case 2:
+                       break;
+                   case 3:
+                       break;
+                   default:
+                       break;
+               }
+               i++;
+            }
+            
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            i = 0;
         }
     }
     
