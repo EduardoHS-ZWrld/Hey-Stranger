@@ -29,7 +29,7 @@ public class Produto {
     //</editor-fold>
     
     //<editor-fold defaultstate="collapsed" desc="G-S pVenda">
-    public double getPvenda() {
+    public int getPvenda() {
         return pvenda;
     }
     public void setPvenda(int pVenda) {
@@ -37,7 +37,7 @@ public class Produto {
     }//</editor-fold>
 
     //<editor-fold defaultstate="collapsed" desc="G-S pCusto">
-    public double getPcusto() {
+    public int getPcusto() {
         return pcusto;
     }
     public void setPcusto(int pCusto) {
@@ -79,9 +79,9 @@ public class Produto {
     
     //Métodos
     //--------------------------------------------------------------------------
-    public void NewProduto(String nome,     int pvenda,     int pcusto,
-                           int estoque,     int depart,     String imagem,
-                           String descr) {
+    public void NovoProduto(String nome,    int pvenda,     int pcusto,
+                            int estoque,    int depart,     String imagem,
+                            String descr) {
         
         this.setNome(nome);
         this.setPvenda(pvenda);
@@ -92,7 +92,7 @@ public class Produto {
         this.setDescr(descr);
     }
     
-    public void NewProduto(String nome, int pvenda, int estoque, String descr){
+    public void NovoProduto(String nome, int pvenda, int estoque, String descr){
         this.setNome(nome);
         this.setPvenda(pvenda);
         this.setEstoque(estoque);

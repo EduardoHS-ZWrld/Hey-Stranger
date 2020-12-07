@@ -2,9 +2,7 @@ package View;
 
 import Conexões.MySQL;
 import Objetos.Pessoa;
-import java.awt.event.WindowEvent;
 import java.util.EmptyStackException;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -14,7 +12,6 @@ public class NewClient extends javax.swing.JFrame {
 
     MySQL conectar = new MySQL(); //acessar os métodos de conexao com o banco
     Pessoa nClient = new Pessoa(); //acessar os atributos da classe cliente
-    //SingIn entrar = new SingIn();
     
     String mês;
     
@@ -305,6 +302,7 @@ public class NewClient extends javax.swing.JFrame {
 
     private void cadastrarSeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarSeActionPerformed
         try {
+            //<editor-fold defaultstate="collapsed" desc="Conversão de meses (Nome >> Número)">
             switch(monthTxt.getSelectedIndex()){
                 case 0:     mês = "1";  break;
                 case 1:     mês = "2";  break;
@@ -319,18 +317,19 @@ public class NewClient extends javax.swing.JFrame {
                 case 10:    mês = "11"; break;
                 case 11:    mês = "12"; break;
             }
+            //</editor-fold>
 
             // Método para fazer as variaveis receberem seus valores
             nClient.novoCliente(nomecTxt.getText(),
                 yearTxt.getSelectedItem()+"-"+mês+"-"+dayTxt.getSelectedItem(),
-                cpfTxt.getText(),
-                estadoTxt.getToolTipText(),
+                cpfTxt.getText(), 
+                (String) estadoTxt.getSelectedItem(),
                 cityTxt.getText(),
                 endeTxt.getText(),
                 emailTxt.getText(),
-                passwTxt.getText());
+                new String (passwTxt.getPassword()));
 
-            if (passwTxt.getText().equals(cpasswTxt.getText())) {
+            if (new String (passwTxt.getPassword()).equals(new String (cpasswTxt.getPassword()))) {
                 System.out.println("Senha confirmada");
             } else {
                 throw new EmptyStackException();
@@ -348,17 +347,17 @@ public class NewClient extends javax.swing.JFrame {
             + "'" + nClient.getPassw() + "'"
             + ");";
 
-            System.out.println(nClient.getCpf());
+            System.out.println(nClient.getEstado());
             this.conectar.cadastrarSQL(comando, 1);
 
             new SingIn().setVisible(true);
-            JOptionPane.showMessageDialog(null, "Cliente cadastrado!");
+            System.out.println("Cliente cadastrado!");
             dispose();
 
         } catch (NullPointerException e) {
-            JOptionPane.showMessageDialog(null, "Algum campo não foi preenchido.");
+            System.out.println("Algum campo não foi preenchido.");
         } catch(EmptyStackException e) {
-            JOptionPane.showMessageDialog(null, "Senha não confirmada.");
+            System.out.println("Senha não confirmada.");
             passwTxt.setText("");
             cpasswTxt.setText("");
         }

@@ -359,7 +359,7 @@ public class MenuProd_Teste extends javax.swing.JFrame {
                         .addGap(0, 0, 0)
                         .addComponent(panelFiltrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 573, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 574, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, 0))
         );
 
@@ -373,14 +373,14 @@ public class MenuProd_Teste extends javax.swing.JFrame {
     private void View_ProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_View_ProdActionPerformed
         conecta.conectaBanco(2);
         conecta.identificaProd(sliQuant.getValue());
-        prod.NewProduto(conecta.getAnome(), conecta.getApreço(), conecta.getAestoq(), conecta.getAdescr());
+        prod.NovoProduto(conecta.getAnome(), conecta.getApreço(), conecta.getAestoq(), conecta.getAdescr());
         pv.VisualizarProd(prod);
         pv.setVisible(true);
         conecta.fechaBanco();
     }//GEN-LAST:event_View_ProdActionPerformed
 
     private void FecharItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FecharItemActionPerformed
-        dispose();
+        System.exit(1);
     }//GEN-LAST:event_FecharItemActionPerformed
 
     /**

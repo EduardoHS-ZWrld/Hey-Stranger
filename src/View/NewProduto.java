@@ -18,7 +18,7 @@ public class NewProduto extends javax.swing.JFrame {
     Produto nProd = new Produto();
     
     /**
-     * Creates new form NewProduto
+     * Creates new form NovoProduto
      */
     public NewProduto() {
         initComponents();
@@ -62,7 +62,6 @@ public class NewProduto extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setLocation(new java.awt.Point(433, 59));
-        setMaximumSize(new java.awt.Dimension(500, 750));
         setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -72,8 +71,10 @@ public class NewProduto extends javax.swing.JFrame {
         jPanel3.setPreferredSize(new java.awt.Dimension(500, 107));
 
         butAdicionar.setBackground(new java.awt.Color(217, 182, 255));
-        butAdicionar.setFont(new java.awt.Font("Traveling _Typewriter", 0, 18)); // NOI18N
+        butAdicionar.setFont(new java.awt.Font("Sitka Small", 1, 18)); // NOI18N
+        butAdicionar.setForeground(new java.awt.Color(20, 20, 20));
         butAdicionar.setText("Adicionar");
+        butAdicionar.setMargin(new java.awt.Insets(5, 14, 0, 14));
         butAdicionar.setPreferredSize(new java.awt.Dimension(150, 45));
         butAdicionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,8 +83,10 @@ public class NewProduto extends javax.swing.JFrame {
         });
 
         butCancelar.setBackground(new java.awt.Color(217, 182, 255));
-        butCancelar.setFont(new java.awt.Font("Traveling _Typewriter", 0, 18)); // NOI18N
+        butCancelar.setFont(new java.awt.Font("Sitka Small", 1, 18)); // NOI18N
+        butCancelar.setForeground(new java.awt.Color(20, 20, 20));
         butCancelar.setText("Cancelar");
+        butCancelar.setMargin(new java.awt.Insets(5, 14, 0, 14));
         butCancelar.setPreferredSize(new java.awt.Dimension(150, 45));
         butCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -333,7 +336,7 @@ public class NewProduto extends javax.swing.JFrame {
         
         
         try {
-            nProd.NewProduto(nmprodTxt.getText(), 
+            nProd.NovoProduto(nmprodTxt.getText(), 
             (int) spiPVenda.getValue(),
             (int) spiPCusto.getValue(),
             (int) spiEstoq.getValue(),

@@ -1,10 +1,6 @@
 package View;
 
-//import java.util.logging.Level;
-//import java.util.logging.Logger;
-import javax.swing.*;
 import Conexões.MySQL;
-import java.awt.event.WindowEvent;
 
 /**
  *
@@ -175,17 +171,22 @@ public class SingIn extends javax.swing.JFrame {
             
             conectar.entrarSQL(sqlComand);
             
-            if (conectar.getPassw().equals(passwTxt.getPassword())) {
-                JOptionPane.showMessageDialog(null, "Senha correta");
+            if (new String (passwTxt.getPassword()).equals(conectar.getPassw())) {
+                //JOptionPane.showMessageDialog(null, "Senha correta");
+                //Este Pane travava o programa(Não consigo explicar o motivo, pois em outras telas eu uso o mesmo método sem acontecer o erro)
+                System.out.println("Senha Correta");
                 new MenuProd_Teste().setVisible(true);
                 dispose();
             } else {
-                JOptionPane.showMessageDialog(null, "Senha incorreta");
+                //JOptionPane.showMessageDialog(null, "Senha incorreta");
+                //Este método também trava o programa
+                System.out.println(passwTxt.getPassword());
+                System.out.println("Senha incorreta");
                 passwTxt.setText("");
             }
             conectar.fechaBanco();
         } catch(NullPointerException e) {
-            JOptionPane.showMessageDialog(null, "Erro: \n"
+            System.out.println("Erro: \n"
                 + e.toString());
         } 
     }//GEN-LAST:event_EntrarButtActionPerformed

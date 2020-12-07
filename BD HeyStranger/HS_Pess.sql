@@ -1,5 +1,5 @@
-drop database if exists HS_Pess;
-create database HS_Pess;
+#drop database if exists HS_Pess;
+#create database HS_Pess;
 use HS_Pess;
 
 create table Pessoa (
@@ -9,7 +9,7 @@ create table Pessoa (
     cpf			varchar(20),
     estado		char(2),
     city		varchar(45),
-    ende		varchar(45),
+    ende		varchar(100),
     email		varchar(30),
     passw		varchar(30)
 );
@@ -29,7 +29,7 @@ create procedure insertCliente(nome varchar(30),
 							   cpf varchar(20), 
                                estado char(2), 
                                city varchar(45), 
-                               ende varchar(45), 
+                               ende varchar(100), 
                                email varchar(30), 
                                passw varchar(30))
 begin

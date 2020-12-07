@@ -27,7 +27,6 @@ public class MySQL {
     private int apreço;
     private int aestoq;
     private String adescr;
-    private int i = 0;
     //--------------------------------------------------------------------------
 
     //Constructor
@@ -69,7 +68,6 @@ public class MySQL {
     public String getPassw() {
         return passw;
     }
-
     public void setPassw(String passw) {
         this.passw = passw;
     }
@@ -161,10 +159,10 @@ public class MySQL {
             
             switch (db) {
                 case 1:
-                    JOptionPane.showMessageDialog(null, "Novo cliente cadastrado!");
+                    System.out.println("Novo cliente cadastrado!");
                     break;
                 case 2:
-                    JOptionPane.showMessageDialog(null, "Novo produto cadastrado!");
+                    System.out.println("Novo produto cadastrado!");
                     break;
             }
             
@@ -181,38 +179,30 @@ public class MySQL {
             resultSet = this.getStatement().executeQuery(SQL); 
             
             while (resultSet.next()) {
-               
-               switch (i) {
-                   case 0:
-                       this.anome = resultSet.getString("nome");
-                       System.out.println(this.anome);
-                       this.apreço = resultSet.getInt("pvenda");
-                       System.out.println(this.apreço);
-                       this.aestoq = resultSet.getInt("estoque");
-                       System.out.println(this.aestoq);
-                       this.adescr = resultSet.getString("descr");
-                       System.out.println(this.adescr);
-                       break;
-                   case 1:
-                       break;
-                   case 2:
-                       break;
-                   case 3:
-                       break;
-                   default:
-                       break;
-               }
-               i++;
+                this.anome = resultSet.getString("nome");
+                System.out.println(this.anome);
+                this.apreço = resultSet.getInt("pvenda");
+                System.out.println(this.apreço);
+                this.aestoq = resultSet.getInt("estoque");
+                System.out.println(this.aestoq);
+                this.adescr = resultSet.getString("descr");
+                System.out.println(this.adescr);
             }
-            
         } catch (SQLException ex) {
             ex.printStackTrace();
-        } finally {
-            i = 0;
         }
     }
     
-        public boolean fechaBanco(){
+    public void comprarProd(String SQL) {
+        try {
+            this.setStatement(getConn().createStatement());
+            this.getStatement().executeUpdate(SQL);
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+    
+    public boolean fechaBanco(){
         try {
             conn.close();
             System.out.println("Conexão encerrada!");
