@@ -15,11 +15,11 @@ Eduardo Henrique dos Santos | RA:200836
 
  > Diagrama de Classes
 
-![alt text](https://github.com/EduardoHS-ZWrld/Hey-Stranger/Diagramas/DiagramaClasses - HS.png?raw=true)
+![alt text](https://github.com/EduardoHS-ZWrld/Hey-Stranger/Diagramas/DiagramaClasses-HS.png?raw=true)
 
  > Modelo Lógico - Pessoas_BD
 
-![alt text](https://github.com/EduardoHS-ZWrld/Hey-Stranger/Diagramas/ER Pessoa - HS.jpg?raw=true) 
+![alt text](https://github.com/EduardoHS-ZWrld/Hey-Stranger/Diagramas/ERPessoa-HS.jpg?raw=true) 
  
  > Modelo Lógico - Produto_BD
  
