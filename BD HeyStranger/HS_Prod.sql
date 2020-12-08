@@ -42,3 +42,11 @@ create procedure identificaProduto(n int)
 begin
 	select nome, pvenda, estoque, descr from Produto where idProd = n;
 end$
+
+create procedure compraProduto(nm varchar(40))
+begin
+	set @ID = (select idProd from Produto where nome = nm);
+	update produto set estoque = (estoque - 1)
+    where idProd = @ID; 
+end$
+delimiter ;
